@@ -216,7 +216,7 @@
             // 
             // colMaterialStyle
             // 
-            this.colMaterialStyle.Caption = "Material Style";
+            this.colMaterialStyle.Caption = "Item";
             this.colMaterialStyle.FieldName = "MaterialStyle";
             this.colMaterialStyle.Name = "colMaterialStyle";
             this.colMaterialStyle.Visible = true;
@@ -224,7 +224,7 @@
             // 
             // colMaterialDetails
             // 
-            this.colMaterialDetails.Caption = "Material Details";
+            this.colMaterialDetails.Caption = "Details";
             this.colMaterialDetails.FieldName = "MaterialDetails";
             this.colMaterialDetails.Name = "colMaterialDetails";
             this.colMaterialDetails.Visible = true;
@@ -240,7 +240,7 @@
             // 
             // colNumberRequest
             // 
-            this.colNumberRequest.Caption = "Number Request";
+            this.colNumberRequest.Caption = "Packing List";
             this.colNumberRequest.DisplayFormat.FormatString = "n0";
             this.colNumberRequest.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colNumberRequest.FieldName = "NumberRequest";
@@ -250,7 +250,7 @@
             // 
             // colNumberReceived
             // 
-            this.colNumberReceived.Caption = "Number Received";
+            this.colNumberReceived.Caption = "Actual Received";
             this.colNumberReceived.DisplayFormat.FormatString = "n0";
             this.colNumberReceived.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colNumberReceived.FieldName = "NumberReceived";
