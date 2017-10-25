@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocumentManager" Class="DocumentManageDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.26.0.9,2010;Initial Catalog=DocumentManager;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="DocumentManagerConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Department" Member="Departments">
+    <Type Name="Department">
+      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Department_Employee" Member="Employees" ThisKey="IDDepart" OtherKey="IDDepart" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Employee_Document" Member="Documents" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Document" />
+      <Association Name="Employee_DocumentExport" Member="DocumentExports" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="DocumentExport" />
+      <Association Name="Department_Employee" Member="Department" ThisKey="IDDepart" OtherKey="IDDepart" Type="Department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailDocument" Member="DetailDocuments">
+    <Type Name="DetailDocument">
+      <Column Name="IDDetail" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StyleNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialStyle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialDetails" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NumberRequest" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NumberReceived" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Document_DetailDocument" Member="Document" ThisKey="IDDocument" OtherKey="IDDocument" Type="Document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailDocumentExport" Member="DetailDocumentExports">
+    <Type Name="DetailDocumentExport">
+      <Column Name="IDDetail" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StyleNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialStyle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialDetails" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NumberRequest" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NumberReceived" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DocumentExport_DetailDocumentExport" Member="DocumentExport" ThisKey="IDDocument" OtherKey="IDDocument" Type="DocumentExport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Document" Member="Documents">
+    <Type Name="Document">
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Document_DetailDocument" Member="DetailDocuments" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocument" />
+      <Association Name="Employee_Document" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DocumentExport" Member="DocumentExports">
+    <Type Name="DocumentExport">
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DocumentExport_DetailDocumentExport" Member="DetailDocumentExports" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocumentExport" />
+      <Association Name="Employee_DocumentExport" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InforDocument" Member="InforDocuments">
+    <Type Name="InforDocument">
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
+    <Type Name="InforDocumentExport">
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
