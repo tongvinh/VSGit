@@ -2261,7 +2261,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Người giao hàng</Value>
+                <Value>Người nhận hàng</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
