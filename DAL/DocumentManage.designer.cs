@@ -51,7 +51,7 @@ namespace DAL
     #endregion
 		
 		public DocumentManageDataContext() : 
-				base(global::DAL.Properties.Settings.Default.DocumentManagerConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.DocumentManagerConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1152,6 +1152,12 @@ namespace DAL
 		
 		private System.Nullable<int> _IDEmployee;
 		
+		private string _Person1;
+		
+		private string _Person2;
+		
+		private string _Person3;
+		
 		private EntitySet<DetailDocument> _DetailDocuments;
 		
 		private EntityRef<Employee> _Employee;
@@ -1178,6 +1184,12 @@ namespace DAL
     partial void OnDescriptionChanged();
     partial void OnIDEmployeeChanging(System.Nullable<int> value);
     partial void OnIDEmployeeChanged();
+    partial void OnPerson1Changing(string value);
+    partial void OnPerson1Changed();
+    partial void OnPerson2Changing(string value);
+    partial void OnPerson2Changed();
+    partial void OnPerson3Changing(string value);
+    partial void OnPerson3Changed();
     #endregion
 		
 		public Document()
@@ -1367,6 +1379,66 @@ namespace DAL
 					this._IDEmployee = value;
 					this.SendPropertyChanged("IDEmployee");
 					this.OnIDEmployeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person1", DbType="NVarChar(50)")]
+		public string Person1
+		{
+			get
+			{
+				return this._Person1;
+			}
+			set
+			{
+				if ((this._Person1 != value))
+				{
+					this.OnPerson1Changing(value);
+					this.SendPropertyChanging();
+					this._Person1 = value;
+					this.SendPropertyChanged("Person1");
+					this.OnPerson1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person2", DbType="NVarChar(50)")]
+		public string Person2
+		{
+			get
+			{
+				return this._Person2;
+			}
+			set
+			{
+				if ((this._Person2 != value))
+				{
+					this.OnPerson2Changing(value);
+					this.SendPropertyChanging();
+					this._Person2 = value;
+					this.SendPropertyChanged("Person2");
+					this.OnPerson2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person3", DbType="NVarChar(50)")]
+		public string Person3
+		{
+			get
+			{
+				return this._Person3;
+			}
+			set
+			{
+				if ((this._Person3 != value))
+				{
+					this.OnPerson3Changing(value);
+					this.SendPropertyChanging();
+					this._Person3 = value;
+					this.SendPropertyChanged("Person3");
+					this.OnPerson3Changed();
 				}
 			}
 		}
@@ -1800,6 +1872,12 @@ namespace DAL
 		
 		private string _IDDepart;
 		
+		private string _Person1;
+		
+		private string _Person2;
+		
+		private string _Person3;
+		
 		public InforDocument()
 		{
 		}
@@ -1976,6 +2054,54 @@ namespace DAL
 				if ((this._IDDepart != value))
 				{
 					this._IDDepart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person1", DbType="NVarChar(50)")]
+		public string Person1
+		{
+			get
+			{
+				return this._Person1;
+			}
+			set
+			{
+				if ((this._Person1 != value))
+				{
+					this._Person1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person2", DbType="NVarChar(50)")]
+		public string Person2
+		{
+			get
+			{
+				return this._Person2;
+			}
+			set
+			{
+				if ((this._Person2 != value))
+				{
+					this._Person2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Person3", DbType="NVarChar(50)")]
+		public string Person3
+		{
+			get
+			{
+				return this._Person3;
+			}
+			set
+			{
+				if ((this._Person3 != value))
+				{
+					this._Person3 = value;
 				}
 			}
 		}

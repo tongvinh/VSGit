@@ -2008,7 +2008,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Mục đích nhập kho</Value>
+                <Value>Mục đích xuất kho</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -2038,7 +2038,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Nhập tại kho</Value>
+                <Value>Xuất tại kho</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -2047,7 +2047,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox32</rd:DefaultName>
         <Top>2.26327in</Top>
-        <Left>0.18277in</Left>
+        <Left>0.16888in</Left>
         <Height>0.20833in</Height>
         <Width>1.69917in</Width>
         <ZIndex>13</ZIndex>

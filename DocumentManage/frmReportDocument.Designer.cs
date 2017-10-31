@@ -32,19 +32,19 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.InforDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DetailDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.InforDocumentBindingSource)).BeginInit();
+            this.InforDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DetailDocumentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InforDocumentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Imformation";
-            reportDataSource1.Value = this.InforDocumentBindingSource;
-            reportDataSource2.Name = "Detail";
-            reportDataSource2.Value = this.DetailDocumentBindingSource;
+            reportDataSource1.Name = "Detail";
+            reportDataSource1.Value = this.DetailDocumentBindingSource;
+            reportDataSource2.Name = "Information";
+            reportDataSource2.Value = this.InforDocumentBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DocumentManage.ReportDocument.rdlc";
@@ -54,13 +54,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(1273, 567);
             this.reportViewer1.TabIndex = 0;
             // 
-            // InforDocumentBindingSource
-            // 
-            this.InforDocumentBindingSource.DataMember = "InforDocument";
-            // 
             // DetailDocumentBindingSource
             // 
-            this.DetailDocumentBindingSource.DataMember = "DetailDocument";
+            this.DetailDocumentBindingSource.DataSource = typeof(DAL.DetailDocument);
+            // 
+            // InforDocumentBindingSource
+            // 
+            this.InforDocumentBindingSource.DataSource = typeof(DAL.InforDocument);
             // 
             // frmReportDocument
             // 
@@ -71,8 +71,8 @@
             this.Name = "frmReportDocument";
             this.Text = "frmReportDocument";
             this.Load += new System.EventHandler(this.frmReportDocument_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.InforDocumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetailDocumentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InforDocumentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -80,7 +80,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource InforDocumentBindingSource;
         private System.Windows.Forms.BindingSource DetailDocumentBindingSource;
+        private System.Windows.Forms.BindingSource InforDocumentBindingSource;
     }
 }

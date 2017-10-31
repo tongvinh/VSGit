@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using Microsoft.Reporting.WinForms;
 
 namespace DocumentManage
 {
@@ -28,6 +29,7 @@ namespace DocumentManage
         {
             DetailDocumentBindingSource.DataSource = re.getDetails(IDDocument);
             InforDocumentBindingSource.DataSource = re.getInfo(IDDocument);
+            //Insert image
             this.reportViewer1.RefreshReport();
         }
     }

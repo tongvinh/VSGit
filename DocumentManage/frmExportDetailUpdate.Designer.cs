@@ -168,70 +168,70 @@
             // 
             // txtStyleNo
             // 
-            this.txtStyleNo.Location = new System.Drawing.Point(99, 12);
+            this.txtStyleNo.Location = new System.Drawing.Point(92, 12);
             this.txtStyleNo.Name = "txtStyleNo";
             this.txtStyleNo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtStyleNo.Size = new System.Drawing.Size(737, 20);
+            this.txtStyleNo.Size = new System.Drawing.Size(744, 20);
             this.txtStyleNo.StyleController = this.layoutControl1;
             this.txtStyleNo.TabIndex = 4;
             // 
             // cmbUnit
             // 
-            this.cmbUnit.Location = new System.Drawing.Point(99, 84);
+            this.cmbUnit.Location = new System.Drawing.Point(92, 84);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbUnit.Size = new System.Drawing.Size(737, 20);
+            this.cmbUnit.Size = new System.Drawing.Size(744, 20);
             this.cmbUnit.StyleController = this.layoutControl1;
             this.cmbUnit.TabIndex = 7;
             // 
             // txtNumberReceived
             // 
-            this.txtNumberReceived.Location = new System.Drawing.Point(99, 132);
+            this.txtNumberReceived.Location = new System.Drawing.Point(92, 132);
             this.txtNumberReceived.Name = "txtNumberReceived";
-            this.txtNumberReceived.Properties.Mask.EditMask = "f";
+            this.txtNumberReceived.Properties.Mask.EditMask = "n0";
             this.txtNumberReceived.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtNumberReceived.Size = new System.Drawing.Size(737, 20);
+            this.txtNumberReceived.Size = new System.Drawing.Size(744, 20);
             this.txtNumberReceived.StyleController = this.layoutControl1;
             this.txtNumberReceived.TabIndex = 9;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(99, 156);
+            this.txtPrice.Location = new System.Drawing.Point(92, 156);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Properties.Mask.EditMask = "c";
             this.txtPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPrice.Size = new System.Drawing.Size(737, 20);
+            this.txtPrice.Size = new System.Drawing.Size(744, 20);
             this.txtPrice.StyleController = this.layoutControl1;
             this.txtPrice.TabIndex = 10;
             // 
             // cmbMaStyle
             // 
-            this.cmbMaStyle.Location = new System.Drawing.Point(99, 36);
+            this.cmbMaStyle.Location = new System.Drawing.Point(92, 36);
             this.cmbMaStyle.Name = "cmbMaStyle";
             this.cmbMaStyle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbMaStyle.Size = new System.Drawing.Size(737, 20);
+            this.cmbMaStyle.Size = new System.Drawing.Size(744, 20);
             this.cmbMaStyle.StyleController = this.layoutControl1;
             this.cmbMaStyle.TabIndex = 11;
             // 
             // cmbMaDetails
             // 
-            this.cmbMaDetails.Location = new System.Drawing.Point(99, 60);
+            this.cmbMaDetails.Location = new System.Drawing.Point(92, 60);
             this.cmbMaDetails.Name = "cmbMaDetails";
             this.cmbMaDetails.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbMaDetails.Size = new System.Drawing.Size(737, 20);
+            this.cmbMaDetails.Size = new System.Drawing.Size(744, 20);
             this.cmbMaDetails.StyleController = this.layoutControl1;
             this.cmbMaDetails.TabIndex = 12;
             // 
             // txtNumberRequest
             // 
-            this.txtNumberRequest.Location = new System.Drawing.Point(99, 108);
+            this.txtNumberRequest.Location = new System.Drawing.Point(92, 108);
             this.txtNumberRequest.Name = "txtNumberRequest";
             this.txtNumberRequest.Properties.Mask.EditMask = "n";
             this.txtNumberRequest.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtNumberRequest.Size = new System.Drawing.Size(737, 20);
+            this.txtNumberRequest.Size = new System.Drawing.Size(744, 20);
             this.txtNumberRequest.StyleController = this.layoutControl1;
             this.txtNumberRequest.TabIndex = 13;
             // 
@@ -260,7 +260,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(828, 24);
             this.layoutControlItem1.Text = "Style No";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem4
             // 
@@ -270,7 +270,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(828, 24);
             this.layoutControlItem4.Text = "Unit";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem6
             // 
@@ -279,8 +279,8 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(828, 24);
-            this.layoutControlItem6.Text = "Number Received";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem6.Text = "Actual Received";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem7
             // 
@@ -290,7 +290,7 @@
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(828, 24);
             this.layoutControlItem7.Text = "Price";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem2
             // 
@@ -299,8 +299,8 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(828, 24);
-            this.layoutControlItem2.Text = "Material Styles";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem2.Text = "Item";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem3
             // 
@@ -309,8 +309,8 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(828, 24);
-            this.layoutControlItem3.Text = "Material Details";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem3.Text = "Details";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlItem5
             // 
@@ -319,8 +319,8 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(828, 24);
-            this.layoutControlItem5.Text = "Number Request";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 13);
+            this.layoutControlItem5.Text = "Packing List";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(77, 13);
             // 
             // frmExportDetailUpdate
             // 

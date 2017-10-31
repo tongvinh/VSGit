@@ -100,7 +100,7 @@ namespace DocumentManage
         {
             if (flag)
             {
-                if (txtStyleNo.EditValue == null || cmbMaStyle.EditValue == null || cmbMaDetails.EditValue == null || cmbUnit.EditValue == null)
+                if (txtStyleNo.EditValue == null || cmbMaStyle.EditValue == null || cmbUnit.EditValue == null)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Focus();
@@ -134,7 +134,7 @@ namespace DocumentManage
             }
             else
             {
-                if (txtStyleNo.EditValue == null || cmbMaStyle.EditValue == null || cmbMaDetails.EditValue == null || cmbUnit.EditValue == null)
+                if (txtStyleNo.EditValue == null || cmbMaStyle.EditValue == null || cmbUnit.EditValue == null)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Focus();

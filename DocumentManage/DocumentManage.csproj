@@ -111,6 +111,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     <Compile Include="frmReportDocumentExport.Designer.cs">
       <DependentUpon>frmReportDocumentExport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTestImagecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestImagecs.Designer.cs">
+      <DependentUpon>frmTestImagecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDepartment.resx">
       <DependentUpon>frmDepartment.cs</DependentUpon>
@@ -249,6 +264,10 @@
     <EmbeddedResource Include="frmReportDocumentExport.resx">
       <DependentUpon>frmReportDocumentExport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTestImagecs.resx">
+      <DependentUpon>frmTestImagecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageReport.rdlc" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +286,7 @@
     <EmbeddedResource Include="ReportDocumentExport.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DAL.DetailDocument.datasource" />
+    <None Include="Properties\DataSources\DAL.InforDocument.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -336,6 +356,7 @@
     <None Include="Resources\print-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\person1.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
