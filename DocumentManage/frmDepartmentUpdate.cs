@@ -16,6 +16,7 @@ namespace DocumentManage
     {
         string IDDepart, DepartName, Description;
         bool flag = false;
+        Boolean HD;
         DepartmentBUS d = new DepartmentBUS();
         public frmDepartmentUpdate()
         {
@@ -29,6 +30,7 @@ namespace DocumentManage
 
         private void btnLuuLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            bool hd;
             if (flag == true)
             {
                 if (txtIDDepart.EditValue == null || txtDepartName.EditValue == null)
@@ -41,9 +43,15 @@ namespace DocumentManage
                     string id = txtIDDepart.Text;
                     string name = txtDepartName.Text;
                     string des = txtDescription.Text;
-                    d.UpdateData(id, name, des);
+                    if (ckHD.Checked)
+                    {
+                        hd = true;
+                    }
+                    else
+                        hd = false;
+                    d.UpdateData(id, name, des,hd);
                     XtraMessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Close();
                 }
             }
             else
@@ -58,7 +66,13 @@ namespace DocumentManage
                     string id = txtIDDepart.Text;
                     string name = txtDepartName.Text;
                     string des = txtDescription.Text;
-                    d.InsertData(id, name, des);
+                    if (ckHD.Checked)
+                    {
+                        hd = true;
+                    }
+                    else
+                        hd = false;
+                    d.InsertData(id, name, des, hd);
                     XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtIDDepart.EditValue = null;
                     txtDepartName.EditValue = null;
@@ -68,11 +82,12 @@ namespace DocumentManage
             }
         }
 
-        public frmDepartmentUpdate(string IDDepart, string DepartName, string Description)
+        public frmDepartmentUpdate(string IDDepart, string DepartName, string Description,Boolean HD)
         {
             this.IDDepart = IDDepart;
             this.DepartName = DepartName;
             this.Description = Description;
+            this.HD = HD;
             flag = true;
             InitializeComponent();
             txtIDDepart.Enabled = false;
@@ -84,6 +99,7 @@ namespace DocumentManage
                 txtIDDepart.EditValue = IDDepart;
                 txtDepartName.EditValue = DepartName;
                 txtDescription.EditValue = Description;
+                ckHD.EditValue = HD;
             }
         }
     }

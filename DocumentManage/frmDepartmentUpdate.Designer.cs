@@ -46,6 +46,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ckHD = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckHD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -115,7 +119,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 141);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 162);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(652, 0);
             // 
@@ -125,7 +129,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 101);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 122);
             // 
             // barDockControlRight
             // 
@@ -133,10 +137,11 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(652, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 101);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 122);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.ckHD);
             this.layoutControl1.Controls.Add(this.txtDescription);
             this.layoutControl1.Controls.Add(this.txtDepartName);
             this.layoutControl1.Controls.Add(this.txtIDDepart);
@@ -144,7 +149,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 40);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(652, 101);
+            this.layoutControl1.Size = new System.Drawing.Size(652, 122);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -154,7 +159,7 @@
             this.txtDescription.MenuManager = this.barManager1;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescription.Size = new System.Drawing.Size(521, 20);
+            this.txtDescription.Size = new System.Drawing.Size(538, 20);
             this.txtDescription.StyleController = this.layoutControl1;
             this.txtDescription.TabIndex = 6;
             // 
@@ -164,7 +169,7 @@
             this.txtDepartName.MenuManager = this.barManager1;
             this.txtDepartName.Name = "txtDepartName";
             this.txtDepartName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDepartName.Size = new System.Drawing.Size(521, 20);
+            this.txtDepartName.Size = new System.Drawing.Size(538, 20);
             this.txtDepartName.StyleController = this.layoutControl1;
             this.txtDepartName.TabIndex = 5;
             // 
@@ -174,7 +179,7 @@
             this.txtIDDepart.MenuManager = this.barManager1;
             this.txtIDDepart.Name = "txtIDDepart";
             this.txtIDDepart.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIDDepart.Size = new System.Drawing.Size(521, 20);
+            this.txtIDDepart.Size = new System.Drawing.Size(538, 20);
             this.txtIDDepart.StyleController = this.layoutControl1;
             this.txtIDDepart.TabIndex = 4;
             // 
@@ -186,10 +191,11 @@
             this.layoutControlItem1,
             this.emptySpaceItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(635, 102);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(652, 122);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -197,16 +203,16 @@
             this.layoutControlItem1.Control = this.txtIDDepart;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(615, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(632, 24);
             this.layoutControlItem1.Text = "ID Department";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(87, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(290, 72);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(615, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(342, 30);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -214,7 +220,7 @@
             this.layoutControlItem2.Control = this.txtDepartName;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(615, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(632, 24);
             this.layoutControlItem2.Text = "Department Name";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 13);
             // 
@@ -223,15 +229,35 @@
             this.layoutControlItem3.Control = this.txtDescription;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(615, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(632, 24);
             this.layoutControlItem3.Text = "Description";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
+            // 
+            // ckHD
+            // 
+            this.ckHD.Location = new System.Drawing.Point(12, 84);
+            this.ckHD.MenuManager = this.barManager1;
+            this.ckHD.Name = "ckHD";
+            this.ckHD.Properties.Caption = "Main Department";
+            this.ckHD.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.ckHD.Size = new System.Drawing.Size(286, 19);
+            this.ckHD.StyleController = this.layoutControl1;
+            this.ckHD.TabIndex = 7;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.ckHD;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(290, 30);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // frmDepartmentUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 141);
+            this.ClientSize = new System.Drawing.Size(652, 162);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -252,6 +278,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckHD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +304,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.CheckEdit ckHD;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

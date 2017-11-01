@@ -2392,7 +2392,7 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
@@ -2400,7 +2400,7 @@
         <Top>1.79105in</Top>
         <Left>6.90856in</Left>
         <Height>0.20833in</Height>
-        <Width>2.38542in</Width>
+        <Width>3.76727in</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocumentManager" Class="DocumentManageDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-8KKC66L;Initial Catalog=DocumentManager;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="DocumentManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.26.0.9,2010;Initial Catalog=DocumentManager;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="DocumentManagerConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Department" Member="Departments">
     <Type Name="Department">
       <Column Name="IDDepart" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Department_Employee" Member="Employees" ThisKey="IDDepart" OtherKey="IDDepart" Type="Employee" />
     </Type>
   </Table>
@@ -59,9 +60,6 @@
       <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Person1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Person2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Person3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Document_DetailDocument" Member="DetailDocuments" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocument" />
       <Association Name="Employee_Document" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
     </Type>
@@ -81,8 +79,8 @@
       <Association Name="Employee_DocumentExport" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.InforDocument" Member="InforDocuments">
-    <Type Name="InforDocument">
+  <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
+    <Type Name="InforDocumentExport">
       <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -94,13 +92,10 @@
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Person1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Person2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Person3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
-    <Type Name="InforDocumentExport">
+  <Table Name="dbo.InforDocument" Member="InforDocuments">
+    <Type Name="InforDocument">
       <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

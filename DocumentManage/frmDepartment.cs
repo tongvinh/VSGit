@@ -43,10 +43,12 @@ namespace DocumentManage
                 string col_IDDepart = "IDDepart";
                 string col_DepartName = "DepartName";
                 string col_Description = "Description";
+                string col_HD = "HD";
                 object value_IDDepart = gvData.GetRowCellValue(row_index, col_IDDepart);
                 object value_DepartName = gvData.GetRowCellValue(row_index, col_DepartName);
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
-                frmDepartmentUpdate frm = new frmDepartmentUpdate(value_IDDepart.ToString(), value_DepartName.ToString(), value_Description.ToString());
+                object value_HD = gvData.GetRowCellValue(row_index, col_HD);
+                frmDepartmentUpdate frm = new frmDepartmentUpdate(value_IDDepart.ToString(), value_DepartName.ToString(), value_Description.ToString(),Convert.ToBoolean(value_HD));
                 frm.ShowDialog();
                 gcData.DataSource = de.LoadData();
             }

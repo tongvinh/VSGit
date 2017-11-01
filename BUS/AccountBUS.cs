@@ -10,6 +10,13 @@ namespace BUS
    public class AccountBUS
     {
         DocumentManageDataContext db = new DocumentManageDataContext();
+        public IEnumerable<Department> getDepartLogin()
+        {
+            var query = (from x in db.Departments
+                         where x.HD == true
+                         select x).ToList();
+            return query;
+        }
         public IEnumerable<Department> GetDepart()
         {
             var query = (from x in db.Departments

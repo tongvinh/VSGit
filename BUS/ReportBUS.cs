@@ -38,10 +38,10 @@ namespace BUS
                          select x).ToList();
             return query;
         }
-        public string ImagePerson1(int IDDocument)
-        {
-            var query = db.Documents.Where(x => x.IDDocument == IDDocument).Select(x => x.Person1).SingleOrDefault();
-            return query;
-        }
+        //public string ImagePerson1(int IDDocument)
+        //{
+        //    var query = db.Documents.Where(x => x.IDDocument == IDDocument).Select(x => x.Person1).SingleOrDefault();
+        //    return query;
+        //}
     }
 }

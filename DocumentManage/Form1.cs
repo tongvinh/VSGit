@@ -55,7 +55,7 @@ namespace DocumentManage
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            cmbDepartment.Properties.DataSource = ac.GetDepart();
+            cmbDepartment.Properties.DataSource = ac.getDepartLogin();
             cmbDepartment.Properties.ValueMember = "IDDepart";
             cmbDepartment.Properties.DisplayMember = "DepartName";
         }

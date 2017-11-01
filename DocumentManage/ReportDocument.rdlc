@@ -2548,7 +2548,7 @@
             <Top>1.05083in</Top>
             <Left>9.00694in</Left>
             <Height>0.1875in</Height>
-            <Width>2.48958in</Width>
+            <Width>2.80098in</Width>
             <ZIndex>22</ZIndex>
             <Style>
               <Border>
@@ -2668,7 +2668,7 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -2676,7 +2676,7 @@
             <Top>1.76959in</Top>
             <Left>6.77315in</Left>
             <Height>0.20833in</Height>
-            <Width>2.2199in</Width>
+            <Width>2.94907in</Width>
             <ZIndex>26</ZIndex>
             <Style>
               <Border>

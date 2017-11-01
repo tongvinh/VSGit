@@ -45,6 +45,7 @@
             this.colIDDepart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
@@ -173,7 +174,8 @@
             this.gvData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colIDDepart,
             this.colDepartName,
-            this.colDescription});
+            this.colDescription,
+            this.colHD});
             this.gvData.GridControl = this.gcData;
             this.gvData.Name = "gvData";
             this.gvData.OptionsBehavior.ReadOnly = true;
@@ -205,6 +207,14 @@
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 2;
+            // 
+            // colHD
+            // 
+            this.colHD.Caption = "Main Department";
+            this.colHD.FieldName = "HD";
+            this.colHD.Name = "colHD";
+            this.colHD.Visible = true;
+            this.colHD.VisibleIndex = 3;
             // 
             // frmDepartment
             // 
@@ -246,5 +256,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIDDepart;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartName;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colHD;
     }
 }

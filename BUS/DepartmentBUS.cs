@@ -13,15 +13,16 @@ namespace BUS
         public Object LoadData()
         {
             var query = (from x in db.Departments
-                         select new { IDDepart = x.IDDepart, DepartName = x.DepartName, Description = x.Description });
+                         select new { IDDepart = x.IDDepart, DepartName = x.DepartName, Description = x.Description,HD=x.HD });
             return query;
         }
-        public void InsertData(string IDDepart,string DepartName,string Description)
+        public void InsertData(string IDDepart,string DepartName,string Description,bool HD)
         {
             Department d = new Department();
             d.IDDepart = IDDepart;
             d.DepartName = DepartName;
             d.Description = Description;
+            d.HD = HD;
             db.Departments.InsertOnSubmit(d);
             db.SubmitChanges();
         }
@@ -31,11 +32,12 @@ namespace BUS
             db.Departments.DeleteOnSubmit(d);
             db.SubmitChanges();
         }
-        public void UpdateData(string IDDepart,string DepartName,string Description)
+        public void UpdateData(string IDDepart,string DepartName,string Description,bool HD)
         {
             Department d = db.Departments.Where(x => x.IDDepart == IDDepart).SingleOrDefault();
             d.DepartName = DepartName;
             d.Description = Description;
+            d.HD = HD;
             db.SubmitChanges();
         }
     }
