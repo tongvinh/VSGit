@@ -59,5 +59,31 @@ namespace DocumentManage
             cmbDepartment.Properties.ValueMember = "IDDepart";
             cmbDepartment.Properties.DisplayMember = "DepartName";
         }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == Convert.ToChar(Keys.Return))
+            {
+                if (cmbDepartment.EditValue == null || txtPass.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string iddepas = cmbDepartment.EditValue.ToString();
+                    int idemployee = Convert.ToInt32(txtPass.Text.ToString());
+                    bool kt = ac.Dangnhap(iddepas, idemployee);
+                    if (kt)
+                    {
+                        MainForm frm = new MainForm(idemployee);
+                        frm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username hoặc password không đúng, Vui lòng kiểm tra lại hoặc liên hệ: Vinh Tống");
+                    }
+                }
+            }
+        }
     }
 }

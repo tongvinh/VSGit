@@ -108,8 +108,16 @@ namespace DocumentManage
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmReportDocument frm = new frmReportDocument(IDDocument);
+            //frmReportDocument frm = new frmReportDocument(IDDocument);
+            frmXtraReportImport frm = new frmXtraReportImport(IDDocument);
             frm.ShowDialog();
+        }
+
+        private void btnTaiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmExcelReader frm = new frmExcelReader(IDDocument);
+            frm.ShowDialog();
+            gcData.DataSource = im.LoadData(IDDocument);
         }
     }
 }

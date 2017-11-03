@@ -64,8 +64,10 @@ namespace DocumentManage
                 string col_Date = "Date";
                 string col_ToStore = "ToStore";
                 string col_Description = "Description";
+                string col_nguoigiao = "PersonSent";
+                string col_bophan = "PartSent";
        
-                string cotk, notk, des;
+                string cotk, notk, des,nguoigiao,bophan;
 
                 object value_IDDocument = gvData.GetRowCellValue(row_index, col_IDDocument);
                 object value_CoTK= gvData.GetRowCellValue(row_index, col_CoTK);
@@ -73,6 +75,8 @@ namespace DocumentManage
                 object value_Date= gvData.GetRowCellValue(row_index, col_Date);
                 object value_ToStore= gvData.GetRowCellValue(row_index, col_ToStore);
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
+                object value_Nguoigiao = gvData.GetRowCellValue(row_index, col_nguoigiao);
+                object value_Bophan = gvData.GetRowCellValue(row_index, col_bophan);
                 if (value_CoTK == null)
                 {
                     cotk = "";
@@ -97,7 +101,23 @@ namespace DocumentManage
                 {
                     des = value_Description.ToString();
                 }
-                frmImportUpdate frm = new frmImportUpdate(IDEmployee,Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date), value_ToStore.ToString(), des);
+                if (value_Nguoigiao==null)
+                {
+                    nguoigiao = "";
+                }
+                else
+                {
+                    nguoigiao = value_Nguoigiao.ToString();
+                }
+                if (value_Bophan==null)
+                {
+                    bophan = "";
+                }
+                else
+                {
+                    bophan = value_Bophan.ToString();
+                }
+                frmImportUpdate frm = new frmImportUpdate(IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date), value_ToStore.ToString(), des, nguoigiao, bophan);
                 frm.ShowDialog();
                 gcData.DataSource = im.loaddata();
             }

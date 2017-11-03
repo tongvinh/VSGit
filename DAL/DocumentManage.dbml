@@ -60,6 +60,8 @@
       <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PersonSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Association Name="Document_DetailDocument" Member="DetailDocuments" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocument" />
       <Association Name="Employee_Document" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
     </Type>
@@ -75,23 +77,10 @@
       <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PersonReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Association Name="DocumentExport_DetailDocumentExport" Member="DetailDocumentExports" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocumentExport" />
       <Association Name="Employee_DocumentExport" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
-    <Type Name="InforDocumentExport">
-      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.InforDocument" Member="InforDocuments">
@@ -107,6 +96,29 @@
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PartSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PersonSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
+    <Type Name="InforDocumentExport">
+      <Column Name="IDDocument" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CoTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FromStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ToStore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDDepart" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PartReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PersonReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

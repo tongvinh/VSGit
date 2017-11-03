@@ -14,7 +14,7 @@ namespace BUS
         {
             var query = (from x in db.Documents
                          join e in db.Employees on x.IDEmployee equals e.IDEmployee
-                         select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName });
+                         select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName,PartSent=x.PartSent,PersonSent=x.PersonSent });
             return query;
         }
         public Object getDataDepart(int IDEmployee)
@@ -36,7 +36,7 @@ namespace BUS
                          select new { IDDepart = x.IDDepart }).Take(1).Select(x => x.IDDepart).FirstOrDefault();
             return query;
         }
-        public void InsertData(string DocumentNumber,string NoTK,string CoTK,DateTime Date,string FromStore,string ToStore,string Description,int IDEmployee)
+        public void InsertData(string DocumentNumber,string NoTK,string CoTK,DateTime Date,string FromStore,string ToStore,string Description,int IDEmployee,string PartSent,string PersonSent)
         {
             Document dc = new Document();
             dc.DocumentNumber = DocumentNumber;
@@ -47,10 +47,12 @@ namespace BUS
             dc.ToStore = ToStore;
             dc.Description = Description;
             dc.IDEmployee = IDEmployee;
+            dc.PartSent = PartSent;
+            dc.PersonSent = PersonSent;
             db.Documents.InsertOnSubmit(dc);
             db.SubmitChanges();
         }
-        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description)
+        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description,string PartSent,string PersonSent)
         {
             Document dc = db.Documents.Where(x => x.IDDocument == IDDocument).SingleOrDefault();
             dc.NoTK = NoTK;
@@ -58,6 +60,8 @@ namespace BUS
             dc.Date = Date;
             dc.ToStore = ToStore;
             dc.Description = Description;
+            dc.PartSent = PartSent;
+            dc.PersonSent = PersonSent;
             db.SubmitChanges();
         }
         public void DeleteData(int IDDocument)

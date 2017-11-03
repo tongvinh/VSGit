@@ -14,7 +14,7 @@ namespace BUS
         {
             var query = (from x in db.DocumentExports
                          join e in db.Employees on x.IDEmployee equals e.IDEmployee
-                         select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName });
+                         select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName,PartReceived=x.PartReceived,PersonReceived=x.PersonReceived });
             return query;
         }
         public Object getDataDepart(int IDEmployee)
@@ -36,7 +36,7 @@ namespace BUS
                          select new { IDDepart = x.IDDepart }).Take(1).Select(x => x.IDDepart).FirstOrDefault();
             return query;
         }
-        public void InsertData(string DocumentNumber, string NoTK, string CoTK, DateTime Date, string FromStore, string ToStore, string Description, int IDEmployee)
+        public void InsertData(string DocumentNumber, string NoTK, string CoTK, DateTime Date, string FromStore, string ToStore, string Description, int IDEmployee,string PartReceived,string PersonReceived)
         {
             DocumentExport dc = new DocumentExport();
             dc.DocumentNumber = DocumentNumber;
@@ -47,10 +47,12 @@ namespace BUS
             dc.ToStore = ToStore;
             dc.Description = Description;
             dc.IDEmployee = IDEmployee;
+            dc.PartReceived = PartReceived;
+            dc.PersonReceived = PersonReceived;
             db.DocumentExports.InsertOnSubmit(dc);
             db.SubmitChanges();
         }
-        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date, string ToStore, string Description)
+        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date, string ToStore, string Description, string PartReceived, string PersonReceived)
         {
             DocumentExport dc = db.DocumentExports.Where(x => x.IDDocument == IDDocument).SingleOrDefault();
             dc.NoTK = NoTK;
@@ -58,6 +60,8 @@ namespace BUS
             dc.Date = Date;
             dc.ToStore = ToStore;
             dc.Description = Description;
+            dc.PartReceived = PartReceived;
+            dc.PersonReceived = PersonReceived;
             db.SubmitChanges();
         }
         public void DeleteData(int IDDocument)

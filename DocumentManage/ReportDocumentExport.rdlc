@@ -1978,7 +1978,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Họ và tên người giao hàng</Value>
+                <Value>Họ và tên người nhận hàng</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -2016,7 +2016,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox31</rd:DefaultName>
-        <Top>1.98549in</Top>
+        <Top>1.95771in</Top>
         <Left>0.14583in</Left>
         <Height>0.22222in</Height>
         <Width>1.71875in</Width>
@@ -2046,8 +2046,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox32</rd:DefaultName>
-        <Top>2.26327in</Top>
-        <Left>0.16888in</Left>
+        <Top>2.17993in</Top>
+        <Left>0.15499in</Left>
         <Height>0.20833in</Height>
         <Width>1.69917in</Width>
         <ZIndex>13</ZIndex>
@@ -2098,7 +2098,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Từ kho:</Value>
+                <Value>Đến kho:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -2115,9 +2115,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox34</rd:DefaultName>
-        <Top>2.29104in</Top>
+        <Top>2.17993in</Top>
         <Left>6.13078in</Left>
-        <Height>0.18056in</Height>
+        <Height>0.20833in</Height>
         <Width>0.75in</Width>
         <ZIndex>15</ZIndex>
         <Style>
@@ -2348,92 +2348,26 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="EmployeeName">
+      <Textbox Name="PersonReceived">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!EmployeeName.Value, "Information")</Value>
+                <Value>=First(Fields!PersonReceived.Value, "Information")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>EmployeeName</rd:DefaultName>
+        <rd:DefaultName>PersonReceived</rd:DefaultName>
         <Top>1.74938in</Top>
-        <Left>1.87847in</Left>
+        <Left>1.85416in</Left>
         <Height>0.20833in</Height>
-        <Width>2.46123in</Width>
+        <Width>3.49875in</Width>
         <ZIndex>21</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="IDDepart">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!IDDepart.Value, "Information")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>IDDepart</rd:DefaultName>
-        <Top>1.79105in</Top>
-        <Left>6.90856in</Left>
-        <Height>0.20833in</Height>
-        <Width>3.76727in</Width>
-        <ZIndex>22</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="ToStore">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!ToStore.Value, "Information")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>ToStore</rd:DefaultName>
-        <Top>2.26327in</Top>
-        <Left>1.89583in</Left>
-        <Height>0.20833in</Height>
-        <Width>2.46123in</Width>
-        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2455,17 +2389,135 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Description</rd:DefaultName>
-        <Top>1.99938in</Top>
-        <Left>1.87847in</Left>
-        <Height>0.25in</Height>
-        <Width>2.47858in</Width>
+        <Top>1.95771in</Top>
+        <Left>1.86458in</Left>
+        <Height>0.22222in</Height>
+        <Width>3.48833in</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DepartName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DepartName.Value, "Information")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DepartName</rd:DefaultName>
+        <Top>2.17993in</Top>
+        <Left>1.86458in</Left>
+        <Height>0.20833in</Height>
+        <Width>3.48833in</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="PartReceived">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PartReceived.Value, "Information")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>PartReceived</rd:DefaultName>
+        <Top>1.79105in</Top>
+        <Left>6.90856in</Left>
+        <Height>0.20833in</Height>
+        <Width>3.44792in</Width>
         <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ToStore">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ToStore.Value, "Information")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ToStore</rd:DefaultName>
+        <Top>2.17993in</Top>
+        <Left>6.90856in</Left>
+        <Height>0.20833in</Height>
+        <Width>3.44791in</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DocumentNumber">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DocumentNumber.Value, "Information")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DocumentNumber</rd:DefaultName>
+        <Top>1.07229in</Top>
+        <Left>9.14235in</Left>
+        <Height>0.1875in</Height>
+        <Width>2.36458in</Width>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2490,16 +2542,16 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Date</rd:DefaultName>
-        <Top>0.893in</Top>
-        <Left>5.70708in</Left>
-        <Height>0.18749in</Height>
-        <Width>2.6031in</Width>
-        <ZIndex>25</ZIndex>
+        <Top>0.8791in</Top>
+        <Left>5.73486in</Left>
+        <Height>0.20139in</Height>
+        <Width>2.64476in</Width>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2510,28 +2562,30 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="DocumentNumber">
+      <Textbox Name="Date2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!DocumentNumber.Value, "Information")</Value>
-                <Style />
+                <Value>=First(Fields!Date.Value, "Information")</Value>
+                <Style>
+                  <Format>dd/MM/yyyy</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>DocumentNumber</rd:DefaultName>
-        <Top>1.07229in</Top>
-        <Left>9.15624in</Left>
-        <Height>0.1875in</Height>
-        <Width>1.71751in</Width>
-        <ZIndex>26</ZIndex>
+        <rd:DefaultName>Date</rd:DefaultName>
+        <Top>3.94334in</Top>
+        <Left>10.81076in</Left>
+        <Height>0.20139in</Height>
+        <Width>2.64476in</Width>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2542,7 +2596,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="EmployeeName1">
+      <Textbox Name="EmployeeName">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -2558,46 +2612,12 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>EmployeeName1</rd:DefaultName>
-        <Top>5.78in</Top>
+        <rd:DefaultName>EmployeeName</rd:DefaultName>
+        <Top>5.53in</Top>
         <Left>3.51833in</Left>
         <Height>0.25in</Height>
         <Width>1.83458in</Width>
-        <ZIndex>27</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Date1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Date.Value, "Information")</Value>
-                <Style>
-                  <Format>dd/MM/yyyy</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Date1</rd:DefaultName>
-        <Top>3.94334in</Top>
-        <Left>10.83854in</Left>
-        <Height>0.22222in</Height>
-        <Width>2.125in</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2631,63 +2651,6 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Information">
-      <Query>
-        <DataSourceName>DAL</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CoTK">
-          <DataField>CoTK</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DocumentNumber">
-          <DataField>DocumentNumber</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EmployeeName">
-          <DataField>EmployeeName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FromStore">
-          <DataField>FromStore</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="IDDepart">
-          <DataField>IDDepart</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="IDDocument">
-          <DataField>IDDocument</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IDEmployee">
-          <DataField>IDEmployee</DataField>
-          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="NoTK">
-          <DataField>NoTK</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ToStore">
-          <DataField>ToStore</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DAL</rd:DataSetName>
-        <rd:TableName>InforDocumentExport</rd:TableName>
-        <rd:ObjectDataSourceType>DAL.InforDocumentExport, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="Detail">
       <Query>
         <DataSourceName>DAL</DataSourceName>
@@ -2743,6 +2706,79 @@
         <rd:DataSetName>DAL</rd:DataSetName>
         <rd:TableName>DetailDocumentExport</rd:TableName>
         <rd:ObjectDataSourceType>DAL.DetailDocumentExport, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Information">
+      <Query>
+        <DataSourceName>DAL</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CoTK">
+          <DataField>CoTK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocumentNumber">
+          <DataField>DocumentNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FromStore">
+          <DataField>FromStore</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IDDepart">
+          <DataField>IDDepart</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IDDocument">
+          <DataField>IDDocument</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IDEmployee">
+          <DataField>IDEmployee</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="NoTK">
+          <DataField>NoTK</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartReceived">
+          <DataField>PartReceived</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PersonReceived">
+          <DataField>PersonReceived</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ToStore">
+          <DataField>ToStore</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DAL</rd:DataSetName>
+        <rd:TableName>InforDocumentExport</rd:TableName>
+        <rd:ObjectDataSourceType>DAL.InforDocumentExport, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

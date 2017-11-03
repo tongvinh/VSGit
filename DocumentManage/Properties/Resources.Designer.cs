@@ -73,6 +73,16 @@ namespace DocumentManage.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_file_open_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-file-open-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bookmark_delete_icon {
             get {
                 object obj = ResourceManager.GetObject("Bookmark-delete-icon", resourceCulture);
@@ -133,6 +143,16 @@ namespace DocumentManage.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Excel_icon {
+            get {
+                object obj = ResourceManager.GetObject("Excel-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Go_back_icon {
             get {
                 object obj = ResourceManager.GetObject("Go-back-icon", resourceCulture);
@@ -166,6 +186,16 @@ namespace DocumentManage.Properties {
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Options_icon {
+            get {
+                object obj = ResourceManager.GetObject("Options-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

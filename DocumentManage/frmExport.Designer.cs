@@ -52,6 +52,8 @@
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDEmployee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPartReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
@@ -185,7 +187,9 @@
             this.colToStore,
             this.colDescription,
             this.colIDEmployee,
-            this.colEmployeeName});
+            this.colEmployeeName,
+            this.colPartReceived,
+            this.colPersonReceived});
             this.gvData.GridControl = this.gcData;
             this.gvData.Name = "gvData";
             this.gvData.OptionsBehavior.Editable = false;
@@ -217,16 +221,12 @@
             this.NoTK.Caption = "No TK";
             this.NoTK.FieldName = "NoTK";
             this.NoTK.Name = "NoTK";
-            this.NoTK.Visible = true;
-            this.NoTK.VisibleIndex = 2;
             // 
             // colCoTK
             // 
             this.colCoTK.Caption = "Co TK";
             this.colCoTK.FieldName = "CoTK";
             this.colCoTK.Name = "colCoTK";
-            this.colCoTK.Visible = true;
-            this.colCoTK.VisibleIndex = 3;
             // 
             // colDate
             // 
@@ -234,7 +234,7 @@
             this.colDate.FieldName = "Date";
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 4;
+            this.colDate.VisibleIndex = 2;
             // 
             // colFromStore
             // 
@@ -242,7 +242,7 @@
             this.colFromStore.FieldName = "FromStore";
             this.colFromStore.Name = "colFromStore";
             this.colFromStore.Visible = true;
-            this.colFromStore.VisibleIndex = 5;
+            this.colFromStore.VisibleIndex = 3;
             // 
             // colToStore
             // 
@@ -250,7 +250,7 @@
             this.colToStore.FieldName = "ToStore";
             this.colToStore.Name = "colToStore";
             this.colToStore.Visible = true;
-            this.colToStore.VisibleIndex = 6;
+            this.colToStore.VisibleIndex = 4;
             // 
             // colDescription
             // 
@@ -258,7 +258,7 @@
             this.colDescription.FieldName = "Description";
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 7;
+            this.colDescription.VisibleIndex = 5;
             // 
             // colIDEmployee
             // 
@@ -272,7 +272,23 @@
             this.colEmployeeName.FieldName = "EmployeeName";
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
-            this.colEmployeeName.VisibleIndex = 8;
+            this.colEmployeeName.VisibleIndex = 6;
+            // 
+            // colPartReceived
+            // 
+            this.colPartReceived.Caption = "Part Received";
+            this.colPartReceived.FieldName = "PartReceived";
+            this.colPartReceived.Name = "colPartReceived";
+            this.colPartReceived.Visible = true;
+            this.colPartReceived.VisibleIndex = 8;
+            // 
+            // colPersonReceived
+            // 
+            this.colPersonReceived.Caption = "Person Received";
+            this.colPersonReceived.FieldName = "PersonReceived";
+            this.colPersonReceived.Name = "colPersonReceived";
+            this.colPersonReceived.Visible = true;
+            this.colPersonReceived.VisibleIndex = 7;
             // 
             // frmExport
             // 
@@ -320,5 +336,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         private DevExpress.XtraGrid.Columns.GridColumn colIDEmployee;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn colPartReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonReceived;
     }
 }

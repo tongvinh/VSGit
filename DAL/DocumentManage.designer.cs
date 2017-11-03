@@ -128,19 +128,19 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<InforDocumentExport> InforDocumentExports
-		{
-			get
-			{
-				return this.GetTable<InforDocumentExport>();
-			}
-		}
-		
 		public System.Data.Linq.Table<InforDocument> InforDocuments
 		{
 			get
 			{
 				return this.GetTable<InforDocument>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InforDocumentExport> InforDocumentExports
+		{
+			get
+			{
+				return this.GetTable<InforDocumentExport>();
 			}
 		}
 	}
@@ -1176,6 +1176,10 @@ namespace DAL
 		
 		private System.Nullable<int> _IDEmployee;
 		
+		private string _PartSent;
+		
+		private string _PersonSent;
+		
 		private EntitySet<DetailDocument> _DetailDocuments;
 		
 		private EntityRef<Employee> _Employee;
@@ -1202,6 +1206,10 @@ namespace DAL
     partial void OnDescriptionChanged();
     partial void OnIDEmployeeChanging(System.Nullable<int> value);
     partial void OnIDEmployeeChanged();
+    partial void OnPartSentChanging(string value);
+    partial void OnPartSentChanged();
+    partial void OnPersonSentChanging(string value);
+    partial void OnPersonSentChanged();
     #endregion
 		
 		public Document()
@@ -1395,6 +1403,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartSent", DbType="NVarChar(150)")]
+		public string PartSent
+		{
+			get
+			{
+				return this._PartSent;
+			}
+			set
+			{
+				if ((this._PartSent != value))
+				{
+					this.OnPartSentChanging(value);
+					this.SendPropertyChanging();
+					this._PartSent = value;
+					this.SendPropertyChanged("PartSent");
+					this.OnPartSentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonSent", DbType="NVarChar(150)")]
+		public string PersonSent
+		{
+			get
+			{
+				return this._PersonSent;
+			}
+			set
+			{
+				if ((this._PersonSent != value))
+				{
+					this.OnPersonSentChanging(value);
+					this.SendPropertyChanging();
+					this._PersonSent = value;
+					this.SendPropertyChanged("PersonSent");
+					this.OnPersonSentChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Document_DetailDocument", Storage="_DetailDocuments", ThisKey="IDDocument", OtherKey="IDDocument")]
 		public EntitySet<DetailDocument> DetailDocuments
 		{
@@ -1499,6 +1547,10 @@ namespace DAL
 		
 		private System.Nullable<int> _IDEmployee;
 		
+		private string _PartReceived;
+		
+		private string _PersonReceived;
+		
 		private EntitySet<DetailDocumentExport> _DetailDocumentExports;
 		
 		private EntityRef<Employee> _Employee;
@@ -1525,6 +1577,10 @@ namespace DAL
     partial void OnDescriptionChanged();
     partial void OnIDEmployeeChanging(System.Nullable<int> value);
     partial void OnIDEmployeeChanged();
+    partial void OnPartReceivedChanging(string value);
+    partial void OnPartReceivedChanged();
+    partial void OnPersonReceivedChanging(string value);
+    partial void OnPersonReceivedChanged();
     #endregion
 		
 		public DocumentExport()
@@ -1718,6 +1774,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartReceived", DbType="NVarChar(150)")]
+		public string PartReceived
+		{
+			get
+			{
+				return this._PartReceived;
+			}
+			set
+			{
+				if ((this._PartReceived != value))
+				{
+					this.OnPartReceivedChanging(value);
+					this.SendPropertyChanging();
+					this._PartReceived = value;
+					this.SendPropertyChanged("PartReceived");
+					this.OnPartReceivedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonReceived", DbType="NVarChar(150)")]
+		public string PersonReceived
+		{
+			get
+			{
+				return this._PersonReceived;
+			}
+			set
+			{
+				if ((this._PersonReceived != value))
+				{
+					this.OnPersonReceivedChanging(value);
+					this.SendPropertyChanging();
+					this._PersonReceived = value;
+					this.SendPropertyChanged("PersonReceived");
+					this.OnPersonReceivedChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocumentExport_DetailDocumentExport", Storage="_DetailDocumentExports", ThisKey="IDDocument", OtherKey="IDDocument")]
 		public EntitySet<DetailDocumentExport> DetailDocumentExports
 		{
@@ -1798,6 +1894,285 @@ namespace DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InforDocument")]
+	public partial class InforDocument
+	{
+		
+		private int _IDDocument;
+		
+		private string _DocumentNumber;
+		
+		private string _NoTK;
+		
+		private string _CoTK;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _FromStore;
+		
+		private string _ToStore;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _IDEmployee;
+		
+		private string _EmployeeName;
+		
+		private string _IDDepart;
+		
+		private string _Expr1;
+		
+		private string _DepartName;
+		
+		private string _PartSent;
+		
+		private string _PersonSent;
+		
+		public InforDocument()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDocument", DbType="Int NOT NULL")]
+		public int IDDocument
+		{
+			get
+			{
+				return this._IDDocument;
+			}
+			set
+			{
+				if ((this._IDDocument != value))
+				{
+					this._IDDocument = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNumber", DbType="NVarChar(50)")]
+		public string DocumentNumber
+		{
+			get
+			{
+				return this._DocumentNumber;
+			}
+			set
+			{
+				if ((this._DocumentNumber != value))
+				{
+					this._DocumentNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoTK", DbType="NVarChar(50)")]
+		public string NoTK
+		{
+			get
+			{
+				return this._NoTK;
+			}
+			set
+			{
+				if ((this._NoTK != value))
+				{
+					this._NoTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoTK", DbType="NVarChar(50)")]
+		public string CoTK
+		{
+			get
+			{
+				return this._CoTK;
+			}
+			set
+			{
+				if ((this._CoTK != value))
+				{
+					this._CoTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FromStore", DbType="NVarChar(100)")]
+		public string FromStore
+		{
+			get
+			{
+				return this._FromStore;
+			}
+			set
+			{
+				if ((this._FromStore != value))
+				{
+					this._FromStore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToStore", DbType="NVarChar(100)")]
+		public string ToStore
+		{
+			get
+			{
+				return this._ToStore;
+			}
+			set
+			{
+				if ((this._ToStore != value))
+				{
+					this._ToStore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(150)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmployee", DbType="Int")]
+		public System.Nullable<int> IDEmployee
+		{
+			get
+			{
+				return this._IDEmployee;
+			}
+			set
+			{
+				if ((this._IDEmployee != value))
+				{
+					this._IDEmployee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="NVarChar(50)")]
+		public string EmployeeName
+		{
+			get
+			{
+				return this._EmployeeName;
+			}
+			set
+			{
+				if ((this._EmployeeName != value))
+				{
+					this._EmployeeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDepart", DbType="VarChar(10)")]
+		public string IDDepart
+		{
+			get
+			{
+				return this._IDDepart;
+			}
+			set
+			{
+				if ((this._IDDepart != value))
+				{
+					this._IDDepart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expr1", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string Expr1
+		{
+			get
+			{
+				return this._Expr1;
+			}
+			set
+			{
+				if ((this._Expr1 != value))
+				{
+					this._Expr1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartName", DbType="NVarChar(50)")]
+		public string DepartName
+		{
+			get
+			{
+				return this._DepartName;
+			}
+			set
+			{
+				if ((this._DepartName != value))
+				{
+					this._DepartName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartSent", DbType="NVarChar(150)")]
+		public string PartSent
+		{
+			get
+			{
+				return this._PartSent;
+			}
+			set
+			{
+				if ((this._PartSent != value))
+				{
+					this._PartSent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonSent", DbType="NVarChar(150)")]
+		public string PersonSent
+		{
+			get
+			{
+				return this._PersonSent;
+			}
+			set
+			{
+				if ((this._PersonSent != value))
+				{
+					this._PersonSent = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InforDocumentExport")]
 	public partial class InforDocumentExport
 	{
@@ -1823,6 +2198,14 @@ namespace DAL
 		private string _EmployeeName;
 		
 		private string _IDDepart;
+		
+		private string _Expr1;
+		
+		private string _DepartName;
+		
+		private string _PartReceived;
+		
+		private string _PersonReceived;
 		
 		public InforDocumentExport()
 		{
@@ -2003,210 +2386,67 @@ namespace DAL
 				}
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InforDocument")]
-	public partial class InforDocument
-	{
 		
-		private int _IDDocument;
-		
-		private string _DocumentNumber;
-		
-		private string _NoTK;
-		
-		private string _CoTK;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private string _FromStore;
-		
-		private string _ToStore;
-		
-		private string _Description;
-		
-		private System.Nullable<int> _IDEmployee;
-		
-		private string _EmployeeName;
-		
-		private string _IDDepart;
-		
-		public InforDocument()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDocument", DbType="Int NOT NULL")]
-		public int IDDocument
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expr1", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string Expr1
 		{
 			get
 			{
-				return this._IDDocument;
+				return this._Expr1;
 			}
 			set
 			{
-				if ((this._IDDocument != value))
+				if ((this._Expr1 != value))
 				{
-					this._IDDocument = value;
+					this._Expr1 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentNumber", DbType="NVarChar(50)")]
-		public string DocumentNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartName", DbType="NVarChar(50)")]
+		public string DepartName
 		{
 			get
 			{
-				return this._DocumentNumber;
+				return this._DepartName;
 			}
 			set
 			{
-				if ((this._DocumentNumber != value))
+				if ((this._DepartName != value))
 				{
-					this._DocumentNumber = value;
+					this._DepartName = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoTK", DbType="NVarChar(50)")]
-		public string NoTK
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartReceived", DbType="NVarChar(150)")]
+		public string PartReceived
 		{
 			get
 			{
-				return this._NoTK;
+				return this._PartReceived;
 			}
 			set
 			{
-				if ((this._NoTK != value))
+				if ((this._PartReceived != value))
 				{
-					this._NoTK = value;
+					this._PartReceived = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoTK", DbType="NVarChar(50)")]
-		public string CoTK
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonReceived", DbType="NVarChar(150)")]
+		public string PersonReceived
 		{
 			get
 			{
-				return this._CoTK;
+				return this._PersonReceived;
 			}
 			set
 			{
-				if ((this._CoTK != value))
+				if ((this._PersonReceived != value))
 				{
-					this._CoTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FromStore", DbType="NVarChar(100)")]
-		public string FromStore
-		{
-			get
-			{
-				return this._FromStore;
-			}
-			set
-			{
-				if ((this._FromStore != value))
-				{
-					this._FromStore = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ToStore", DbType="NVarChar(100)")]
-		public string ToStore
-		{
-			get
-			{
-				return this._ToStore;
-			}
-			set
-			{
-				if ((this._ToStore != value))
-				{
-					this._ToStore = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(150)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmployee", DbType="Int")]
-		public System.Nullable<int> IDEmployee
-		{
-			get
-			{
-				return this._IDEmployee;
-			}
-			set
-			{
-				if ((this._IDEmployee != value))
-				{
-					this._IDEmployee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeName", DbType="NVarChar(50)")]
-		public string EmployeeName
-		{
-			get
-			{
-				return this._EmployeeName;
-			}
-			set
-			{
-				if ((this._EmployeeName != value))
-				{
-					this._EmployeeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDepart", DbType="VarChar(10)")]
-		public string IDDepart
-		{
-			get
-			{
-				return this._IDDepart;
-			}
-			set
-			{
-				if ((this._IDDepart != value))
-				{
-					this._IDDepart = value;
+					this._PersonReceived = value;
 				}
 			}
 		}

@@ -131,6 +131,7 @@
             this.txtPass.Properties.PasswordChar = '@';
             this.txtPass.Size = new System.Drawing.Size(210, 20);
             this.txtPass.TabIndex = 12;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             // 
             // frmLogin
             // 

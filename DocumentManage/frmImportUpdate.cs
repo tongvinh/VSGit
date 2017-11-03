@@ -16,7 +16,7 @@ namespace DocumentManage
     public partial class frmImportUpdate : Form
     {
         int IDEmployee,IDDocument;
-        string DocumentNumber, NoTK, CoTK, FromStore, ToStore, Description;
+        string DocumentNumber, NoTK, CoTK, FromStore, ToStore, Description,nguoigiao,bophan;
         DateTime Date;
         bool flag;
         ImportBUS im = new ImportBUS();
@@ -29,7 +29,7 @@ namespace DocumentManage
             InitializeComponent();
             this.IDEmployee = IDEmployee;
         }
-        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description)
+        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description,string nguoigiao,string bophan)
         {
             InitializeComponent();
             this.IDEmployee = IDEmployee;
@@ -39,6 +39,8 @@ namespace DocumentManage
             this.Date = Date;
             this.ToStore = ToStore;
             this.Description = Description;
+            this.nguoigiao = nguoigiao;
+            this.bophan = bophan;
             flag = true;
         }
         private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -57,13 +59,15 @@ namespace DocumentManage
             txtCotk.EditValue = CoTK;
             cmbDepart.EditValue = ToStore;
             txtDescription.EditValue = Description;
+            txtBoPhan.EditValue = bophan;
+            txtNguoiGiao.EditValue = nguoigiao;
         }
 
         private void btnLuuLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (flag)
             {
-                if (dateImport.EditValue == null || cmbDepart.EditValue == null||txtDescription.EditValue==null)
+                if (dateImport.EditValue == null || cmbDepart.EditValue == null||txtDescription.EditValue==null||txtNguoiGiao.EditValue==null||txtBoPhan.EditValue==null)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Focus();
@@ -75,14 +79,16 @@ namespace DocumentManage
                     DateTime dt = Convert.ToDateTime(dateImport.EditValue);
                     string tostore = cmbDepart.EditValue.ToString();
                     string des = txtDescription.Text;
-                    im.UpdateData(IDDocument, notk, cotk, dt, tostore, des);
+                    string nguoigiao = txtNguoiGiao.Text;
+                    string bophan = txtBoPhan.Text;
+                    im.UpdateData(IDDocument, notk, cotk, dt, tostore, des, bophan, nguoigiao);
                     XtraMessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Close();
                 }
             }
             else
             {
-                if (dateImport.EditValue == null || cmbDepart.EditValue == null || txtDescription.EditValue == null)
+                if (dateImport.EditValue == null || cmbDepart.EditValue == null || txtDescription.EditValue == null||txtBoPhan.EditValue==null||txtNguoiGiao==null)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Focus();
@@ -96,8 +102,10 @@ namespace DocumentManage
                     string Fromstore = im.getFromStore(IDEmployee);
                     string Tostore = cmbDepart.EditValue.ToString();
                     string Description = txtDescription.Text;
+                    string nguoigiao = txtNguoiGiao.Text;
+                    string bophan = txtBoPhan.Text;
                     string DocumnetNumber = "PNK_CC_" + iddoccument.ToString("D4") + "/" + Fromstore + "/" + Tostore;
-                    im.InsertData(DocumnetNumber, Notk, Cotk, date, Fromstore, Tostore, Description, IDEmployee);
+                    im.InsertData(DocumnetNumber, Notk, Cotk, date, Fromstore, Tostore, Description, IDEmployee, bophan, nguoigiao);
                     XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNotk.EditValue = null;
                     txtCotk.EditValue = null;
