@@ -137,7 +137,9 @@ namespace DocumentManage
                 {
                     string col_IDDocument = "IDDocument";
                     object value_IDDocument = gvData.GetRowCellValue(row_index, col_IDDocument);
-                    frmImportDetail f = new frmImportDetail(Convert.ToInt32(value_IDDocument));
+                    string col_ToStore = "ToStore";
+                    object value_ToStore = gvData.GetRowCellValue(row_index, col_ToStore);
+                    frmImportDetail f = new frmImportDetail(Convert.ToInt32(value_IDDocument), value_ToStore.ToString());
                     f.MdiParent = this.ParentForm;
                     f.Show();
                 }

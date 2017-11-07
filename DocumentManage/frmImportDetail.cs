@@ -15,6 +15,7 @@ namespace DocumentManage
     public partial class frmImportDetail : Form
     {
         int IDDocument;
+        string ToStore;
         ImportDetailBUS im = new ImportDetailBUS();
         public frmImportDetail()
         {
@@ -24,6 +25,12 @@ namespace DocumentManage
         {
             InitializeComponent();
             this.IDDocument = IDDocument;
+        }
+        public frmImportDetail(int IDDocument,string ToStore)
+        {
+            InitializeComponent();
+            this.IDDocument = IDDocument;
+            this.ToStore = ToStore;
         }
         private void frmImportDetail_Load(object sender, EventArgs e)
         {
@@ -109,7 +116,7 @@ namespace DocumentManage
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //frmReportDocument frm = new frmReportDocument(IDDocument);
-            frmXtraReportImport frm = new frmXtraReportImport(IDDocument);
+            frmXtraReportImport frm = new frmXtraReportImport(IDDocument,ToStore);
             frm.ShowDialog();
         }
 

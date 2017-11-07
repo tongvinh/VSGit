@@ -79,7 +79,7 @@ namespace DocumentManage
                     string notk = txtNotk.Text;
                     string cotk = txtCotk.Text;
                     DateTime dt = Convert.ToDateTime(dateImport.EditValue);
-                    string tostore = cmbDepart.Text;
+                    string tostore = cmbDepart.EditValue.ToString();
                     string des = txtDescription.Text;
                     string nguoinhan = txtNguoinhan.Text;
                     string bophan = txtBophan.Text;
@@ -103,7 +103,7 @@ namespace DocumentManage
                     string Cotk = txtCotk.Text;
                     DateTime date = Convert.ToDateTime(dateImport.EditValue.ToString());
                     string Fromstore = ex.getFromStore(IDEmployee);
-                    string Tostore = cmbDepart.Text;
+                    string Tostore = cmbDepart.EditValue.ToString();
                     string Description = txtDescription.Text;
                     string DocumnetNumber = "PXK_CC_" + iddoccument.ToString("D4") + "/" + Fromstore + "/" + Tostore;
                     string Nguoinhan = txtNguoinhan.Text;

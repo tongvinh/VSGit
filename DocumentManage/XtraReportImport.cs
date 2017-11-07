@@ -11,16 +11,32 @@ namespace DocumentManage
     {
         ReportBUS re = new ReportBUS();
         int IDDocument;
+        string ToStore;
         public XtraReportImport()
         {
             InitializeComponent();
         }
-        public XtraReportImport(int IDDocument)
+        public XtraReportImport(int IDDocument,string ToStore)
         {
             InitializeComponent();
             this.IDDocument = IDDocument;
+            this.ToStore = ToStore;
             objectDataSource1.DataSource = re.getInfo(IDDocument);
             objectDataSource2.DataSource = re.getDetails(IDDocument);
+            if (ToStore=="PL1")
+            {
+                pThuKho.Value = "TRẦN MINH TẤN";
+            }
+            else if (ToStore=="VA1")
+            {
+                pNguoiNhan.Value = "NGUYỄN THỊ KIM LOAN";
+                pThuKho.Value = "TRẦN MINH TẤN";
+            }
+            else if (ToStore=="TP1")
+            {
+                pNguoiNhan.Value = "HUỲNH THANH THỦY";
+                pThuKho.Value = "PHẠM THỊ XUÂN";
+            }
         }
     }
 }

@@ -238,7 +238,7 @@
             // 
             // colFromStore
             // 
-            this.colFromStore.Caption = "From Store";
+            this.colFromStore.Caption = "From";
             this.colFromStore.FieldName = "FromStore";
             this.colFromStore.Name = "colFromStore";
             this.colFromStore.Visible = true;
@@ -246,7 +246,7 @@
             // 
             // colToStore
             // 
-            this.colToStore.Caption = "To Store";
+            this.colToStore.Caption = "To";
             this.colToStore.FieldName = "ToStore";
             this.colToStore.Name = "colToStore";
             this.colToStore.Visible = true;
@@ -276,7 +276,7 @@
             // 
             // colPartSent
             // 
-            this.colPartSent.Caption = "Part Sent";
+            this.colPartSent.Caption = "Sales Department";
             this.colPartSent.FieldName = "PartSent";
             this.colPartSent.Name = "colPartSent";
             this.colPartSent.Visible = true;
@@ -284,7 +284,7 @@
             // 
             // colPersonSent
             // 
-            this.colPersonSent.Caption = "Person Sent";
+            this.colPersonSent.Caption = "Buy At";
             this.colPersonSent.FieldName = "PersonSent";
             this.colPersonSent.Name = "colPersonSent";
             this.colPersonSent.Visible = true;

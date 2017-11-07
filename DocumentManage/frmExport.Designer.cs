@@ -238,7 +238,7 @@
             // 
             // colFromStore
             // 
-            this.colFromStore.Caption = "From Store";
+            this.colFromStore.Caption = "From";
             this.colFromStore.FieldName = "FromStore";
             this.colFromStore.Name = "colFromStore";
             this.colFromStore.Visible = true;
@@ -246,7 +246,7 @@
             // 
             // colToStore
             // 
-            this.colToStore.Caption = "To Store";
+            this.colToStore.Caption = "To";
             this.colToStore.FieldName = "ToStore";
             this.colToStore.Name = "colToStore";
             this.colToStore.Visible = true;

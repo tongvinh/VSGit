@@ -13,19 +13,25 @@ namespace DocumentManage
     public partial class frmXtraReportImport : Form
     {
         int IDDocument;
+        string ToStore;
         public frmXtraReportImport()
         {
             InitializeComponent();
         }
-        public frmXtraReportImport(int IDDocument)
+        public frmXtraReportImport(int IDDocument,string ToStore)
         {
             InitializeComponent();
             this.IDDocument = IDDocument;
+            this.ToStore = ToStore;
         }
 
         private void frmXtraReportImport_Load(object sender, EventArgs e)
         {
-            XtraReportImport report = new XtraReportImport(IDDocument);
+            XtraReportImport report = new XtraReportImport(IDDocument,ToStore);
+            //foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
+            //{
+            //    p.Visible = false;
+            //}
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }
