@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace DocumentManage
 {
     public partial class Form2 : Form
     {
+        DoiSo d = new DoiSo();
         public Form2()
         {
             InitializeComponent();
@@ -44,6 +46,11 @@ namespace DocumentManage
                     frm.ShowDialog();
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(d.ChuyenSo("120001")+" đồng");
         }
     }
 }

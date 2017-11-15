@@ -10,6 +10,7 @@ namespace BUS
    public class ReportBUS
     {
         DocumentManageDataContext db = new DocumentManageDataContext();
+        DoiSo d = new DoiSo();
         public IEnumerable<DetailDocument> getDetails(int IDDocument)
         {
             var query = (from x in db.DetailDocuments
@@ -37,6 +38,20 @@ namespace BUS
                          where x.IDDocument == IDDocument
                          select x).ToList();
             return query;
+        }
+        public string TienBangChuImport(int IDDocument)
+        {
+            var query = (from x in db.DetailDocuments
+                         where x.IDDocument == IDDocument
+                         select x.TotalAmount).Sum();
+            return d.ChuyenSo(query.ToString());
+        }
+        public string TienBangChuExport(int IDDocument)
+        {
+            var query = (from x in db.DetailDocumentExports
+                         where x.IDDocument == IDDocument
+                         select x.TotalAmount).Sum();
+            return d.ChuyenSo(query.ToString());
         }
         //public string ImagePerson1(int IDDocument)
         //{

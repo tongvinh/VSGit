@@ -308,7 +308,7 @@
             this.cmbToStore.Location = new System.Drawing.Point(0, 72);
             this.cmbToStore.Name = "cmbToStore";
             this.cmbToStore.Size = new System.Drawing.Size(726, 24);
-            this.cmbToStore.Text = "Từ Kho";
+            this.cmbToStore.Text = "Đến Kho";
             this.cmbToStore.TextSize = new System.Drawing.Size(55, 13);
             // 
             // layoutControlItem6

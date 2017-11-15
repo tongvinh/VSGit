@@ -23,6 +23,8 @@ namespace DocumentManage
             this.IDDocument = IDDocument;
             objectDataSource1.DataSource = re.getInfoExport(IDDocument);
             objectDataSource2.DataSource = re.getDetailExports(IDDocument);
+            pDoiSoThanhChu.Value = re.TienBangChuExport(IDDocument);
+            pDoiSoThanhChu.Visible = false;
         }
 
         private void reportHeaderBand1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

@@ -30,6 +30,7 @@ namespace DocumentManage
         {
             WindowState = FormWindowState.Maximized;
             gcData.DataSource = ex.loaddata();
+            btnSua.Enabled = false;
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -44,7 +45,7 @@ namespace DocumentManage
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmExportUpdate frm = new frmExportUpdate(IDEmployee);
+            frmExportUpdate frm = new frmExportUpdate(this.IDEmployee);
             frm.ShowDialog();
             gcData.DataSource = ex.loaddata();
         }
@@ -63,6 +64,7 @@ namespace DocumentManage
                 string col_NoTK = "NoTK";
                 string col_Date = "Date";
                 string col_ToStore = "ToStore";
+                string col_FromStore = "FromStore";
                 string col_Description = "Description";
                 string col_Bophan = "PartReceived";
                 string col_Nguoinhan = "PersonReceived";
@@ -74,6 +76,7 @@ namespace DocumentManage
                 object value_NoTK = gvData.GetRowCellValue(row_index, col_NoTK);
                 object value_Date = gvData.GetRowCellValue(row_index, col_Date);
                 object value_ToStore = gvData.GetRowCellValue(row_index, col_ToStore);
+                object value_FromStore = gvData.GetRowCellValue(row_index, col_FromStore);
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
                 object value_Bophan = gvData.GetRowCellValue(row_index, col_Bophan);
                 object value_Nguoinhan = gvData.GetRowCellValue(row_index, col_Nguoinhan);
@@ -117,7 +120,7 @@ namespace DocumentManage
                 {
                     nguoinhan = value_Nguoinhan.ToString();
                 }
-                frmExportUpdate frm = new frmExportUpdate(IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date), value_ToStore.ToString(), des, bophan, nguoinhan);
+                frmExportUpdate frm = new frmExportUpdate(IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date),value_FromStore.ToString() , value_ToStore.ToString(), des, bophan, nguoinhan);
                 frm.ShowDialog();
                 gcData.DataSource = ex.loaddata();
             }
@@ -141,6 +144,21 @@ namespace DocumentManage
                     f.MdiParent = this.ParentForm;
                     f.Show();
                 }
+            }
+        }
+
+        private void gvData_Click(object sender, EventArgs e)
+        {
+            int row_index = this.gvData.FocusedRowHandle;
+            string col_IDEmployee = "IDEmployee";
+            object value_IDEmployee = this.gvData.GetRowCellValue(row_index, col_IDEmployee);
+            if (int.Parse(value_IDEmployee.ToString()) == this.IDEmployee)
+            {
+                this.btnSua.Enabled = true;
+            }
+            else
+            {
+                this.btnSua.Enabled = false;
             }
         }
     }

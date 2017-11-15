@@ -98,7 +98,7 @@
             this.btnThem.Id = 0;
             this.btnThem.ImageOptions.Image = global::DocumentManage.Properties.Resources.Actions_contact_new_icon__1_;
             this.btnThem.Name = "btnThem";
-            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThem_ItemClick);
             // 
             // btnSua
             // 
@@ -198,6 +198,10 @@
             this.gvData.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
             this.gvData.OptionsFilter.UseNewCustomFilterDialog = true;
             this.gvData.OptionsView.ShowAutoFilterRow = true;
+            this.gvData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colIDDocument, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.gvData.CustomRowFilter += new DevExpress.XtraGrid.Views.Base.RowFilterEventHandler(this.gvData_CustomRowFilter);
+            this.gvData.Click += new System.EventHandler(this.gvData_Click);
             this.gvData.DoubleClick += new System.EventHandler(this.gvData_DoubleClick);
             // 
             // colIDDocument

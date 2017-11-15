@@ -198,6 +198,9 @@
             this.gvData.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
             this.gvData.OptionsFilter.UseNewCustomFilterDialog = true;
             this.gvData.OptionsView.ShowAutoFilterRow = true;
+            this.gvData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colIDDocument, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.gvData.Click += new System.EventHandler(this.gvData_Click);
             this.gvData.DoubleClick += new System.EventHandler(this.gvData_DoubleClick);
             // 
             // colIDDocument
@@ -276,7 +279,7 @@
             // 
             // colPartReceived
             // 
-            this.colPartReceived.Caption = "Part Received";
+            this.colPartReceived.Caption = "To Store";
             this.colPartReceived.FieldName = "PartReceived";
             this.colPartReceived.Name = "colPartReceived";
             this.colPartReceived.Visible = true;

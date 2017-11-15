@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AccountBUS.cs" />
     <Compile Include="DepartmentBUS.cs" />
+    <Compile Include="DoiSo.cs" />
     <Compile Include="EmployeeBUS.cs" />
     <Compile Include="ExportBUS.cs" />
     <Compile Include="ExportDetailBUS.cs" />

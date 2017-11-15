@@ -17,12 +17,26 @@ namespace BUS
                          select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName,PartReceived=x.PartReceived,PersonReceived=x.PersonReceived });
             return query;
         }
-        public Object getDataDepart(int IDEmployee)
+      /*  public Object getDataDepart(int IDEmployee)
         {
             var query = (from x in db.Departments
                          where x.IDDepart != ((from e in db.Employees
                                                where e.IDEmployee == IDEmployee
                                                select e.IDDepart).FirstOrDefault())
+                         select new { IDDepart = x.IDDepart, DepartName = x.DepartName }).ToList();
+            return query;
+        }*/
+        public Object getDataDepart(int IDEmployee)
+        {
+            var query = (from x in db.Departments
+                         where x.HD==true
+                         select new { IDDepart = x.IDDepart, DepartName = x.DepartName }).ToList();
+            return query;
+        }
+        public Object getFromStoreDepart()
+        {
+            var query = (from x in db.Departments
+                         where x.HD == true
                          select new { IDDepart = x.IDDepart, DepartName = x.DepartName }).ToList();
             return query;
         }
@@ -52,12 +66,14 @@ namespace BUS
             db.DocumentExports.InsertOnSubmit(dc);
             db.SubmitChanges();
         }
-        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date, string ToStore, string Description, string PartReceived, string PersonReceived)
+        public void UpdateData(int IDDocument,string DocumentNumber, string NoTK, string CoTK, DateTime Date,string FromStore, string ToStore, string Description, string PartReceived, string PersonReceived)
         {
             DocumentExport dc = db.DocumentExports.Where(x => x.IDDocument == IDDocument).SingleOrDefault();
+            dc.DocumentNumber = DocumentNumber;
             dc.NoTK = NoTK;
             dc.CoTK = CoTK;
             dc.Date = Date;
+            dc.FromStore = FromStore;
             dc.ToStore = ToStore;
             dc.Description = Description;
             dc.PartReceived = PartReceived;

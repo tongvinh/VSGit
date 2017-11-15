@@ -38,6 +38,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbFromTo = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtBophan = new DevExpress.XtraEditors.TextEdit();
             this.txtNguoinhan = new DevExpress.XtraEditors.TextEdit();
             this.txtNotk = new DevExpress.XtraEditors.TextEdit();
@@ -54,9 +56,12 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFromTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBophan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNguoinhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNotk.Properties)).BeginInit();
@@ -74,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -132,7 +138,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 257);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 263);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(803, 0);
             // 
@@ -142,7 +148,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 217);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 223);
             // 
             // barDockControlRight
             // 
@@ -150,10 +156,11 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(803, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 217);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 223);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cmbFromTo);
             this.layoutControl1.Controls.Add(this.txtBophan);
             this.layoutControl1.Controls.Add(this.txtNguoinhan);
             this.layoutControl1.Controls.Add(this.txtNotk);
@@ -165,13 +172,32 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 40);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(803, 217);
+            this.layoutControl1.Size = new System.Drawing.Size(803, 223);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // cmbFromTo
+            // 
+            this.cmbFromTo.Location = new System.Drawing.Point(71, 84);
+            this.cmbFromTo.MenuManager = this.barManager1;
+            this.cmbFromTo.Name = "cmbFromTo";
+            this.cmbFromTo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFromTo.Properties.View = this.searchLookUpEdit1View;
+            this.cmbFromTo.Size = new System.Drawing.Size(720, 20);
+            this.cmbFromTo.StyleController = this.layoutControl1;
+            this.cmbFromTo.TabIndex = 12;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // txtBophan
             // 
-            this.txtBophan.Location = new System.Drawing.Point(71, 132);
+            this.txtBophan.Location = new System.Drawing.Point(71, 156);
             this.txtBophan.MenuManager = this.barManager1;
             this.txtBophan.Name = "txtBophan";
             this.txtBophan.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -181,7 +207,7 @@
             // 
             // txtNguoinhan
             // 
-            this.txtNguoinhan.Location = new System.Drawing.Point(71, 108);
+            this.txtNguoinhan.Location = new System.Drawing.Point(71, 132);
             this.txtNguoinhan.MenuManager = this.barManager1;
             this.txtNguoinhan.Name = "txtNguoinhan";
             this.txtNguoinhan.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -222,7 +248,7 @@
             // 
             // cmbDepart
             // 
-            this.cmbDepart.Location = new System.Drawing.Point(71, 84);
+            this.cmbDepart.Location = new System.Drawing.Point(71, 108);
             this.cmbDepart.Name = "cmbDepart";
             this.cmbDepart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -240,10 +266,10 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(71, 156);
+            this.txtDescription.Location = new System.Drawing.Point(71, 180);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescription.Size = new System.Drawing.Size(720, 49);
+            this.txtDescription.Size = new System.Drawing.Size(720, 31);
             this.txtDescription.StyleController = this.layoutControl1;
             this.txtDescription.TabIndex = 9;
             // 
@@ -258,10 +284,11 @@
             this.cmbToStore,
             this.layoutControlItem6,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(803, 217);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(803, 223);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -298,7 +325,7 @@
             // 
             this.cmbToStore.Control = this.cmbDepart;
             this.cmbToStore.CustomizationFormText = "To Store";
-            this.cmbToStore.Location = new System.Drawing.Point(0, 72);
+            this.cmbToStore.Location = new System.Drawing.Point(0, 96);
             this.cmbToStore.Name = "cmbToStore";
             this.cmbToStore.Size = new System.Drawing.Size(783, 24);
             this.cmbToStore.Text = "Nơi Nhận";
@@ -308,16 +335,16 @@
             // 
             this.layoutControlItem6.Control = this.txtDescription;
             this.layoutControlItem6.CustomizationFormText = "Description";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(783, 53);
+            this.layoutControlItem6.Size = new System.Drawing.Size(783, 35);
             this.layoutControlItem6.Text = "Mô Tả";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(56, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtNguoinhan;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(783, 24);
             this.layoutControlItem4.Text = "Người Nhận";
@@ -326,17 +353,26 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtBophan;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(783, 24);
-            this.layoutControlItem5.Text = "Bộ Phận";
+            this.layoutControlItem5.Text = "Đến Kho";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(56, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.cmbFromTo;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(783, 24);
+            this.layoutControlItem7.Text = "Nơi Gửi";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(56, 13);
             // 
             // frmExportUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 257);
+            this.ClientSize = new System.Drawing.Size(803, 263);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -348,6 +384,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFromTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBophan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNguoinhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNotk.Properties)).EndInit();
@@ -365,6 +403,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +436,8 @@
         private DevExpress.XtraEditors.TextEdit txtNguoinhan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.SearchLookUpEdit cmbFromTo;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

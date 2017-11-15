@@ -52,9 +52,10 @@ namespace BUS
             db.Documents.InsertOnSubmit(dc);
             db.SubmitChanges();
         }
-        public void UpdateData(int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description,string PartSent,string PersonSent)
+        public void UpdateData(int IDDocument,string DocumentNumber, string NoTK, string CoTK, DateTime Date, string ToStore, string Description,string PartSent,string PersonSent)
         {
             Document dc = db.Documents.Where(x => x.IDDocument == IDDocument).SingleOrDefault();
+            dc.DocumentNumber = DocumentNumber;
             dc.NoTK = NoTK;
             dc.CoTK = CoTK;
             dc.Date = Date;

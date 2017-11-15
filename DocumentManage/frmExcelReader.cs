@@ -96,10 +96,38 @@ namespace DocumentManage
                         mastyle = value_MaterialStyle.ToString();
                         madetails = value_MaterialDetails.ToString();
                         unit = value_Unit.ToString();
-                        numberRequest = float.Parse(value_NumberRequest.ToString());
-                        numberReceived = float.Parse(value_NumberReceived.ToString());
-                        price = decimal.Parse(value_Price.ToString());
-                        totalAmount = decimal.Parse(value_TotalAmount.ToString());
+                        if (value_NumberRequest==null)
+                        {
+                            numberRequest = 0;
+                        }
+                        else
+                        {
+                            numberRequest = float.Parse(value_NumberRequest.ToString());
+                        }
+                        if (value_NumberReceived==null)
+                        {
+                            numberReceived = 0;
+                        }
+                        else
+                        {
+                            numberReceived = float.Parse(value_NumberReceived.ToString());
+                        }
+                        if (value_Price==null)
+                        {
+                            price = 0;
+                        }
+                        else
+                        {
+                            price = decimal.Parse(value_Price.ToString());
+                        }
+                        if (value_TotalAmount==null)
+                        {
+                            totalAmount = 0;
+                        }
+                        else
+                        {
+                            totalAmount = decimal.Parse(value_TotalAmount.ToString());
+                        }
                         im.InsertData(IDDocument, tyleno, mastyle, madetails, unit, numberRequest, numberReceived, price, totalAmount);
 
                     }
@@ -107,7 +135,9 @@ namespace DocumentManage
                     {
 
                         XtraMessageBox.Show("Định dạng trong file Excel không đúng, Kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                     }
+                   
                 }
                 XtraMessageBox.Show("Nhập dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

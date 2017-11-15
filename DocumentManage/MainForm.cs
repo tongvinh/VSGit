@@ -73,7 +73,14 @@ namespace DocumentManage
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            if (this.IDEmployee!=1201368)
+            {
+                this.manageInformationToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                this.manageInformationToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)

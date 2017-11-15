@@ -29,7 +29,7 @@ namespace DocumentManage
             InitializeComponent();
             this.IDEmployee = IDEmployee;
         }
-        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string ToStore, string Description,string nguoigiao,string bophan)
+        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string FromStore,string ToStore, string Description,string nguoigiao,string bophan)
         {
             InitializeComponent();
             this.IDEmployee = IDEmployee;
@@ -37,6 +37,7 @@ namespace DocumentManage
             this.NoTK = NoTK;
             this.CoTK = CoTK;
             this.Date = Date;
+            this.FromStore = FromStore;
             this.ToStore = ToStore;
             this.Description = Description;
             this.nguoigiao = nguoigiao;
@@ -79,9 +80,12 @@ namespace DocumentManage
                     DateTime dt = Convert.ToDateTime(dateImport.EditValue);
                     string tostore = cmbDepart.EditValue.ToString();
                     string des = txtDescription.Text;
+                    //Update Document number
+                    string DocumnetNumber = "PNK_CC_" + IDDocument.ToString("D4") + "/" + FromStore + "/" + tostore;
+                    //
                     string nguoigiao = txtNguoiGiao.Text;
                     string bophan = txtBoPhan.Text;
-                    im.UpdateData(IDDocument, notk, cotk, dt, tostore, des, bophan, nguoigiao);
+                    im.UpdateData(IDDocument,DocumnetNumber, notk, cotk, dt, tostore, des, bophan, nguoigiao);
                     XtraMessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }

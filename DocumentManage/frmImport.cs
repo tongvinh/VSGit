@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DocumentManage
 {
@@ -27,9 +28,9 @@ namespace DocumentManage
         }
         private void frmImport_Load(object sender, EventArgs e)
         {
-       
-            WindowState = FormWindowState.Maximized;
-            gcData.DataSource = im.loaddata();
+            this.WindowState = FormWindowState.Maximized;
+            this.gcData.DataSource = im.loaddata();
+            this.btnSua.Enabled = false;
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -39,14 +40,14 @@ namespace DocumentManage
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gcData.DataSource = im.loaddata();
+            this.gcData.DataSource = im.loaddata();
         }
 
-        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmImportUpdate frm = new frmImportUpdate(IDEmployee);
+            frmImportUpdate frm = new frmImportUpdate(this.IDEmployee);
             frm.ShowDialog();
-            gcData.DataSource = im.loaddata();
+            this.gcData.DataSource = this.im.loaddata();
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,6 +63,7 @@ namespace DocumentManage
                 string col_CoTK = "CoTK";
                 string col_NoTK = "NoTK";
                 string col_Date = "Date";
+                string col_FromStore = "FromStore";
                 string col_ToStore = "ToStore";
                 string col_Description = "Description";
                 string col_nguoigiao = "PersonSent";
@@ -73,6 +75,7 @@ namespace DocumentManage
                 object value_CoTK= gvData.GetRowCellValue(row_index, col_CoTK);
                 object value_NoTK= gvData.GetRowCellValue(row_index, col_NoTK);
                 object value_Date= gvData.GetRowCellValue(row_index, col_Date);
+                object value_ToFromStore = gvData.GetRowCellValue(row_index, col_FromStore);
                 object value_ToStore= gvData.GetRowCellValue(row_index, col_ToStore);
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
                 object value_Nguoigiao = gvData.GetRowCellValue(row_index, col_nguoigiao);
@@ -109,7 +112,7 @@ namespace DocumentManage
                 {
                     nguoigiao = value_Nguoigiao.ToString();
                 }
-                if (value_Bophan==null)
+                if (value_Bophan == null)
                 {
                     bophan = "";
                 }
@@ -117,9 +120,9 @@ namespace DocumentManage
                 {
                     bophan = value_Bophan.ToString();
                 }
-                frmImportUpdate frm = new frmImportUpdate(IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date), value_ToStore.ToString(), des, nguoigiao, bophan);
+                frmImportUpdate frm = new frmImportUpdate(this.IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date),value_ToFromStore.ToString(), value_ToStore.ToString(), des, nguoigiao, bophan);
                 frm.ShowDialog();
-                gcData.DataSource = im.loaddata();
+                this.gcData.DataSource = this.im.loaddata();
             }
         }
 
@@ -132,18 +135,31 @@ namespace DocumentManage
             }
             else
             {
-                int row_index = gvData.FocusedRowHandle;
+                int row_index = this.gvData.FocusedRowHandle;
                 if (row_index >= 0)
                 {
                     string col_IDDocument = "IDDocument";
-                    object value_IDDocument = gvData.GetRowCellValue(row_index, col_IDDocument);
+                    object value_IDDocument = this.gvData.GetRowCellValue(row_index, col_IDDocument);
                     string col_ToStore = "ToStore";
-                    object value_ToStore = gvData.GetRowCellValue(row_index, col_ToStore);
+                    object value_ToStore = this.gvData.GetRowCellValue(row_index, col_ToStore);
                     frmImportDetail f = new frmImportDetail(Convert.ToInt32(value_IDDocument), value_ToStore.ToString());
                     f.MdiParent = this.ParentForm;
                     f.Show();
                 }
             }
+        }
+
+        private void gvData_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+        {
+            
+        }
+
+        private void gvData_Click(object sender, EventArgs e)
+        {
+            int row_index = this.gvData.FocusedRowHandle;
+            string col_IDEmployee = "IDEmployee";
+            object value_IDEmployee = this.gvData.GetRowCellValue(row_index, col_IDEmployee);
+            this.btnSua.Enabled = int.Parse(value_IDEmployee.ToString()) == this.IDEmployee;
         }
     }
 }
