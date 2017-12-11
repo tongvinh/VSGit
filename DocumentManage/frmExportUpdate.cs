@@ -15,7 +15,7 @@ namespace DocumentManage
     public partial class frmExportUpdate : Form
     {
         int IDDocument,IDEmployee;
-        string NoTK, CoTK,FromStore, ToStore, Description,nguoinhan,bophan;
+        string NoTK, CoTK,FromStore, ToStore, Description,nguoinhan,bophan,SoHopDong,SoHoaDon;
         DateTime Date;
         bool flag;
         ExportBUS ex = new ExportBUS();
@@ -29,7 +29,20 @@ namespace DocumentManage
             InitializeComponent();
             this.IDEmployee = IDEmployee;
         }
-        public frmExportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string FromStore, string ToStore, string Description,string bophan,string nguoinhan)
+
+        public frmExportUpdate(
+            int IDEmployee,
+            int IDDocument,
+            string NoTK,
+            string CoTK,
+            DateTime Date,
+            string FromStore,
+            string ToStore,
+            string Description,
+            string bophan,
+            string nguoinhan,
+            string SoHopDong,
+            string SoHoaDon)
         {
             InitializeComponent();
             this.IDEmployee = IDEmployee;
@@ -42,8 +55,11 @@ namespace DocumentManage
             this.Description = Description;
             this.bophan = bophan;
             this.nguoinhan = nguoinhan;
+            this.SoHopDong = SoHopDong;
+            this.SoHoaDon = SoHoaDon;
             flag = true;
         }
+
         private void frmExportUpdate_Load(object sender, EventArgs e)
         {
             cmbDepart.Properties.DataSource = ex.getDataDepart(IDEmployee);
@@ -62,6 +78,8 @@ namespace DocumentManage
                 txtDescription.EditValue = Description;
                 txtBophan.Text = bophan;
                 txtNguoinhan.Text = nguoinhan;
+                this.txtSoHopDong.EditValue = this.SoHopDong;
+                this.txtSoHoaDon.EditValue = this.SoHoaDon;
             }
           
         }
@@ -94,7 +112,10 @@ namespace DocumentManage
                     //
                     string nguoinhan = txtNguoinhan.Text;
                     string bophan = txtBophan.Text;
-                    ex.UpdateData(IDDocument,DocumnetNumber, notk, cotk, dt,fromstore, tostore, des, bophan, nguoinhan);
+                    //Update 11/12
+                    string SoHopDong = this.txtSoHopDong.Text;
+                    string SoHoaDon = this.txtSoHoaDon.Text;
+                    ex.UpdateData(IDDocument,DocumnetNumber, notk, cotk, dt,fromstore, tostore, des, bophan, nguoinhan,SoHopDong,SoHoaDon);
                     XtraMessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
 
@@ -120,7 +141,10 @@ namespace DocumentManage
                     string DocumnetNumber = "PXK_CC_" + iddoccument.ToString("D4") + "/" + fromstore + "/" + Tostore;
                     string Nguoinhan = txtNguoinhan.Text;
                     string Bophan = txtBophan.Text;
-                    ex.InsertData(DocumnetNumber, Notk, Cotk, date, fromstore, Tostore, Description, IDEmployee, Bophan, Nguoinhan);
+                    //Update 11/12
+                    string SoHopDong = this.txtSoHopDong.Text;
+                    string SoHoaDon = this.txtSoHoaDon.Text;
+                    ex.InsertData(DocumnetNumber, Notk, Cotk, date, fromstore, Tostore, Description, IDEmployee, Bophan, Nguoinhan,SoHopDong,SoHoaDon);
                     XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNotk.EditValue = null;
                     txtCotk.EditValue = null;

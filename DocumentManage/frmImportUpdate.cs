@@ -16,7 +16,7 @@ namespace DocumentManage
     public partial class frmImportUpdate : Form
     {
         int IDEmployee,IDDocument;
-        string DocumentNumber, NoTK, CoTK, FromStore, ToStore, Description,nguoigiao,bophan;
+        string DocumentNumber, NoTK, CoTK, FromStore, ToStore, Description,nguoigiao,bophan,SoHD,SoPO,HTThanhToan,PTVanChuyen,DVTien;
         DateTime Date;
         bool flag;
         ImportBUS im = new ImportBUS();
@@ -29,7 +29,7 @@ namespace DocumentManage
             InitializeComponent();
             this.IDEmployee = IDEmployee;
         }
-        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string FromStore,string ToStore, string Description,string nguoigiao,string bophan)
+        public frmImportUpdate(int IDEmployee,int IDDocument, string NoTK, string CoTK, DateTime Date,string FromStore,string ToStore, string Description,string nguoigiao,string bophan,string SoHD,string SoPO,string HTThanhToan,string PTVanChuyen,string DVTien)
         {
             InitializeComponent();
             this.IDEmployee = IDEmployee;
@@ -42,6 +42,11 @@ namespace DocumentManage
             this.Description = Description;
             this.nguoigiao = nguoigiao;
             this.bophan = bophan;
+            this.SoHD = SoHD;
+            this.SoPO = SoPO;
+            this.HTThanhToan = HTThanhToan;
+            this.PTVanChuyen = PTVanChuyen;
+            this.DVTien = DVTien;
             flag = true;
         }
         private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,6 +67,11 @@ namespace DocumentManage
             txtDescription.EditValue = Description;
             txtBoPhan.EditValue = bophan;
             txtNguoiGiao.EditValue = nguoigiao;
+            this.txtSoHD.EditValue = this.SoHD;
+            this.txtSoPO.EditValue = this.SoPO;
+            this.txtHTThanhToan.EditValue = this.HTThanhToan;
+            this.txtPTVanChuyen.EditValue = this.PTVanChuyen;
+            this.txtDVTien.EditValue = this.DVTien;
         }
 
         private void btnLuuLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -85,7 +95,13 @@ namespace DocumentManage
                     //
                     string nguoigiao = txtNguoiGiao.Text;
                     string bophan = txtBoPhan.Text;
-                    im.UpdateData(IDDocument,DocumnetNumber, notk, cotk, dt, tostore, des, bophan, nguoigiao);
+                    //update 11/12
+                    string SoHD = this.txtSoHD.Text;
+                    string SoPO = this.txtSoPO.Text;
+                    string HTThanhToan = this.txtHTThanhToan.Text;
+                    string PTVanChuyen = this.txtPTVanChuyen.Text;
+                    string DVTien = this.txtDVTien.Text;
+                    im.UpdateData(IDDocument,DocumnetNumber, notk, cotk, dt, tostore, des, bophan, nguoigiao,SoHD,SoPO,HTThanhToan,PTVanChuyen,DVTien);
                     XtraMessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -109,7 +125,13 @@ namespace DocumentManage
                     string nguoigiao = txtNguoiGiao.Text;
                     string bophan = txtBoPhan.Text;
                     string DocumnetNumber = "PNK_CC_" + iddoccument.ToString("D4") + "/" + Fromstore + "/" + Tostore;
-                    im.InsertData(DocumnetNumber, Notk, Cotk, date, Fromstore, Tostore, Description, IDEmployee, bophan, nguoigiao);
+                    //Update 11/12
+                    string SoHD = this.txtSoHD.Text;
+                    string SoPO = this.txtSoPO.Text;
+                    string HTThanhToan = this.txtHTThanhToan.Text;
+                    string PTVanChuyen = this.txtPTVanChuyen.Text;
+                    string DVTien = this.txtDVTien.Text;
+                    im.InsertData(DocumnetNumber, Notk, Cotk, date, Fromstore, Tostore, Description, IDEmployee, bophan, nguoigiao,SoHD,SoPO,HTThanhToan,PTVanChuyen,DVTien);
                     XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNotk.EditValue = null;
                     txtCotk.EditValue = null;

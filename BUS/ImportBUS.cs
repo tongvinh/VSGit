@@ -14,7 +14,26 @@ namespace BUS
         {
             var query = (from x in db.Documents
                          join e in db.Employees on x.IDEmployee equals e.IDEmployee
-                         select new { IDDocument = x.IDDocument, DocumentNumber = x.DocumentNumber, NoTK = x.NoTK, CoTK = x.CoTK, Date = x.Date, FromStore = x.FromStore, ToStore = x.ToStore, Description = x.Description, IDEmployee = x.IDEmployee, EmployeeName = e.EmployeeName,PartSent=x.PartSent,PersonSent=x.PersonSent });
+                         select new
+                                    {
+                                        IDDocument = x.IDDocument,
+                                        DocumentNumber = x.DocumentNumber,
+                                        NoTK = x.NoTK,
+                                        CoTK = x.CoTK,
+                                        Date = x.Date,
+                                        FromStore = x.FromStore,
+                                        ToStore = x.ToStore,
+                                        Description = x.Description,
+                                        IDEmployee = x.IDEmployee,
+                                        EmployeeName = e.EmployeeName,
+                                        PartSent = x.PartSent,
+                                        PersonSent = x.PersonSent,
+                                        SoHD = x.SoHD,
+                                        SoPO = x.SoPO,
+                                        HTThanhToan = x.HTThanhToan,
+                                        PTVanChuyen = x.PTVanChuyen,
+                                        DVTien = x.DVTien
+                                    });
             return query;
         }
         public Object getDataDepart(int IDEmployee)
@@ -36,7 +55,23 @@ namespace BUS
                          select new { IDDepart = x.IDDepart }).Take(1).Select(x => x.IDDepart).FirstOrDefault();
             return query;
         }
-        public void InsertData(string DocumentNumber,string NoTK,string CoTK,DateTime Date,string FromStore,string ToStore,string Description,int IDEmployee,string PartSent,string PersonSent)
+
+        public void InsertData(
+            string DocumentNumber,
+            string NoTK,
+            string CoTK,
+            DateTime Date,
+            string FromStore,
+            string ToStore,
+            string Description,
+            int IDEmployee,
+            string PartSent,
+            string PersonSent,
+            string SoHD,
+            string SoPO,
+            string HTThanhToan,
+            string PTVanChuyen,
+            string DVtien)
         {
             Document dc = new Document();
             dc.DocumentNumber = DocumentNumber;
@@ -49,10 +84,30 @@ namespace BUS
             dc.IDEmployee = IDEmployee;
             dc.PartSent = PartSent;
             dc.PersonSent = PersonSent;
+            dc.SoHD = SoHD;
+            dc.SoPO = SoPO;
+            dc.HTThanhToan = HTThanhToan;
+            dc.PTVanChuyen = PTVanChuyen;
+            dc.DVTien = DVtien;
             db.Documents.InsertOnSubmit(dc);
             db.SubmitChanges();
         }
-        public void UpdateData(int IDDocument,string DocumentNumber, string NoTK, string CoTK, DateTime Date, string ToStore, string Description,string PartSent,string PersonSent)
+
+        public void UpdateData(
+            int IDDocument,
+            string DocumentNumber,
+            string NoTK,
+            string CoTK,
+            DateTime Date,
+            string ToStore,
+            string Description,
+            string PartSent,
+            string PersonSent,
+            string SoHD,
+            string SoPO,
+            string HTThanhToan,
+            string PTVanChuyen,
+            string DVtien)
         {
             Document dc = db.Documents.Where(x => x.IDDocument == IDDocument).SingleOrDefault();
             dc.DocumentNumber = DocumentNumber;
@@ -63,8 +118,14 @@ namespace BUS
             dc.Description = Description;
             dc.PartSent = PartSent;
             dc.PersonSent = PersonSent;
+            dc.SoHD = SoHD;
+            dc.SoPO = SoPO;
+            dc.HTThanhToan = HTThanhToan;
+            dc.PTVanChuyen = PTVanChuyen;
+            dc.DVTien = DVtien;
             db.SubmitChanges();
         }
+
         public void DeleteData(int IDDocument)
         {
             Document dc = db.Documents.Where(x => x.IDDocument == IDDocument).SingleOrDefault();

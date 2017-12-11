@@ -1180,6 +1180,16 @@ namespace DAL
 		
 		private string _PersonSent;
 		
+		private string _SoHD;
+		
+		private string _SoPO;
+		
+		private string _HTThanhToan;
+		
+		private string _PTVanChuyen;
+		
+		private string _DVTien;
+		
 		private EntitySet<DetailDocument> _DetailDocuments;
 		
 		private EntityRef<Employee> _Employee;
@@ -1210,6 +1220,16 @@ namespace DAL
     partial void OnPartSentChanged();
     partial void OnPersonSentChanging(string value);
     partial void OnPersonSentChanged();
+    partial void OnSoHDChanging(string value);
+    partial void OnSoHDChanged();
+    partial void OnSoPOChanging(string value);
+    partial void OnSoPOChanged();
+    partial void OnHTThanhToanChanging(string value);
+    partial void OnHTThanhToanChanged();
+    partial void OnPTVanChuyenChanging(string value);
+    partial void OnPTVanChuyenChanged();
+    partial void OnDVTienChanging(string value);
+    partial void OnDVTienChanged();
     #endregion
 		
 		public Document()
@@ -1443,6 +1463,106 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHD", DbType="NVarChar(20)")]
+		public string SoHD
+		{
+			get
+			{
+				return this._SoHD;
+			}
+			set
+			{
+				if ((this._SoHD != value))
+				{
+					this.OnSoHDChanging(value);
+					this.SendPropertyChanging();
+					this._SoHD = value;
+					this.SendPropertyChanged("SoHD");
+					this.OnSoHDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPO", DbType="NVarChar(20)")]
+		public string SoPO
+		{
+			get
+			{
+				return this._SoPO;
+			}
+			set
+			{
+				if ((this._SoPO != value))
+				{
+					this.OnSoPOChanging(value);
+					this.SendPropertyChanging();
+					this._SoPO = value;
+					this.SendPropertyChanged("SoPO");
+					this.OnSoPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HTThanhToan", DbType="NVarChar(20)")]
+		public string HTThanhToan
+		{
+			get
+			{
+				return this._HTThanhToan;
+			}
+			set
+			{
+				if ((this._HTThanhToan != value))
+				{
+					this.OnHTThanhToanChanging(value);
+					this.SendPropertyChanging();
+					this._HTThanhToan = value;
+					this.SendPropertyChanged("HTThanhToan");
+					this.OnHTThanhToanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PTVanChuyen", DbType="NVarChar(20)")]
+		public string PTVanChuyen
+		{
+			get
+			{
+				return this._PTVanChuyen;
+			}
+			set
+			{
+				if ((this._PTVanChuyen != value))
+				{
+					this.OnPTVanChuyenChanging(value);
+					this.SendPropertyChanging();
+					this._PTVanChuyen = value;
+					this.SendPropertyChanged("PTVanChuyen");
+					this.OnPTVanChuyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVTien", DbType="NVarChar(5)")]
+		public string DVTien
+		{
+			get
+			{
+				return this._DVTien;
+			}
+			set
+			{
+				if ((this._DVTien != value))
+				{
+					this.OnDVTienChanging(value);
+					this.SendPropertyChanging();
+					this._DVTien = value;
+					this.SendPropertyChanged("DVTien");
+					this.OnDVTienChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Document_DetailDocument", Storage="_DetailDocuments", ThisKey="IDDocument", OtherKey="IDDocument")]
 		public EntitySet<DetailDocument> DetailDocuments
 		{
@@ -1551,6 +1671,10 @@ namespace DAL
 		
 		private string _PersonReceived;
 		
+		private string _SoHopDong;
+		
+		private string _SoHoaDon;
+		
 		private EntitySet<DetailDocumentExport> _DetailDocumentExports;
 		
 		private EntityRef<Employee> _Employee;
@@ -1581,6 +1705,10 @@ namespace DAL
     partial void OnPartReceivedChanged();
     partial void OnPersonReceivedChanging(string value);
     partial void OnPersonReceivedChanged();
+    partial void OnSoHopDongChanging(string value);
+    partial void OnSoHopDongChanged();
+    partial void OnSoHoaDonChanging(string value);
+    partial void OnSoHoaDonChanged();
     #endregion
 		
 		public DocumentExport()
@@ -1814,6 +1942,46 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHopDong", DbType="NVarChar(20)")]
+		public string SoHopDong
+		{
+			get
+			{
+				return this._SoHopDong;
+			}
+			set
+			{
+				if ((this._SoHopDong != value))
+				{
+					this.OnSoHopDongChanging(value);
+					this.SendPropertyChanging();
+					this._SoHopDong = value;
+					this.SendPropertyChanged("SoHopDong");
+					this.OnSoHopDongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHoaDon", DbType="NVarChar(20)")]
+		public string SoHoaDon
+		{
+			get
+			{
+				return this._SoHoaDon;
+			}
+			set
+			{
+				if ((this._SoHoaDon != value))
+				{
+					this.OnSoHoaDonChanging(value);
+					this.SendPropertyChanging();
+					this._SoHoaDon = value;
+					this.SendPropertyChanged("SoHoaDon");
+					this.OnSoHoaDonChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DocumentExport_DetailDocumentExport", Storage="_DetailDocumentExports", ThisKey="IDDocument", OtherKey="IDDocument")]
 		public EntitySet<DetailDocumentExport> DetailDocumentExports
 		{
@@ -1927,6 +2095,16 @@ namespace DAL
 		private string _PartSent;
 		
 		private string _PersonSent;
+		
+		private string _SoHD;
+		
+		private string _SoPO;
+		
+		private string _HTThanhToan;
+		
+		private string _PTVanChuyen;
+		
+		private string _DVTien;
 		
 		public InforDocument()
 		{
@@ -2171,6 +2349,86 @@ namespace DAL
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHD", DbType="NVarChar(20)")]
+		public string SoHD
+		{
+			get
+			{
+				return this._SoHD;
+			}
+			set
+			{
+				if ((this._SoHD != value))
+				{
+					this._SoHD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPO", DbType="NVarChar(20)")]
+		public string SoPO
+		{
+			get
+			{
+				return this._SoPO;
+			}
+			set
+			{
+				if ((this._SoPO != value))
+				{
+					this._SoPO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HTThanhToan", DbType="NVarChar(20)")]
+		public string HTThanhToan
+		{
+			get
+			{
+				return this._HTThanhToan;
+			}
+			set
+			{
+				if ((this._HTThanhToan != value))
+				{
+					this._HTThanhToan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PTVanChuyen", DbType="NVarChar(20)")]
+		public string PTVanChuyen
+		{
+			get
+			{
+				return this._PTVanChuyen;
+			}
+			set
+			{
+				if ((this._PTVanChuyen != value))
+				{
+					this._PTVanChuyen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVTien", DbType="NVarChar(5)")]
+		public string DVTien
+		{
+			get
+			{
+				return this._DVTien;
+			}
+			set
+			{
+				if ((this._DVTien != value))
+				{
+					this._DVTien = value;
+				}
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InforDocumentExport")]
@@ -2206,6 +2464,10 @@ namespace DAL
 		private string _PartReceived;
 		
 		private string _PersonReceived;
+		
+		private string _SoHopDong;
+		
+		private string _SoHoaDon;
 		
 		public InforDocumentExport()
 		{
@@ -2447,6 +2709,38 @@ namespace DAL
 				if ((this._PersonReceived != value))
 				{
 					this._PersonReceived = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHopDong", DbType="NVarChar(20)")]
+		public string SoHopDong
+		{
+			get
+			{
+				return this._SoHopDong;
+			}
+			set
+			{
+				if ((this._SoHopDong != value))
+				{
+					this._SoHopDong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoHoaDon", DbType="NVarChar(20)")]
+		public string SoHoaDon
+		{
+			get
+			{
+				return this._SoHoaDon;
+			}
+			set
+			{
+				if ((this._SoHoaDon != value))
+				{
+					this._SoHoaDon = value;
 				}
 			}
 		}

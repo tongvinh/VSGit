@@ -54,6 +54,11 @@
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPartSent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonSent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoHopDong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoPO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHTThanhToan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPTVanChuyen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDVTien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
@@ -189,7 +194,12 @@
             this.colIDEmployee,
             this.colEmployeeName,
             this.colPartSent,
-            this.colPersonSent});
+            this.colPersonSent,
+            this.colSoHopDong,
+            this.colSoPO,
+            this.colHTThanhToan,
+            this.colPTVanChuyen,
+            this.colDVTien});
             this.gvData.GridControl = this.gcData;
             this.gvData.Name = "gvData";
             this.gvData.OptionsBehavior.Editable = false;
@@ -211,6 +221,7 @@
             this.colIDDocument.Name = "colIDDocument";
             this.colIDDocument.Visible = true;
             this.colIDDocument.VisibleIndex = 0;
+            this.colIDDocument.Width = 90;
             // 
             // colDocumentNumber
             // 
@@ -219,6 +230,7 @@
             this.colDocumentNumber.Name = "colDocumentNumber";
             this.colDocumentNumber.Visible = true;
             this.colDocumentNumber.VisibleIndex = 1;
+            this.colDocumentNumber.Width = 130;
             // 
             // NoTK
             // 
@@ -239,6 +251,7 @@
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
             this.colDate.VisibleIndex = 2;
+            this.colDate.Width = 99;
             // 
             // colFromStore
             // 
@@ -247,6 +260,7 @@
             this.colFromStore.Name = "colFromStore";
             this.colFromStore.Visible = true;
             this.colFromStore.VisibleIndex = 3;
+            this.colFromStore.Width = 91;
             // 
             // colToStore
             // 
@@ -255,6 +269,7 @@
             this.colToStore.Name = "colToStore";
             this.colToStore.Visible = true;
             this.colToStore.VisibleIndex = 4;
+            this.colToStore.Width = 81;
             // 
             // colDescription
             // 
@@ -263,6 +278,7 @@
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 5;
+            this.colDescription.Width = 81;
             // 
             // colIDEmployee
             // 
@@ -277,6 +293,7 @@
             this.colEmployeeName.Name = "colEmployeeName";
             this.colEmployeeName.Visible = true;
             this.colEmployeeName.VisibleIndex = 6;
+            this.colEmployeeName.Width = 120;
             // 
             // colPartSent
             // 
@@ -285,6 +302,7 @@
             this.colPartSent.Name = "colPartSent";
             this.colPartSent.Visible = true;
             this.colPartSent.VisibleIndex = 8;
+            this.colPartSent.Width = 109;
             // 
             // colPersonSent
             // 
@@ -293,6 +311,52 @@
             this.colPersonSent.Name = "colPersonSent";
             this.colPersonSent.Visible = true;
             this.colPersonSent.VisibleIndex = 7;
+            this.colPersonSent.Width = 114;
+            // 
+            // colSoHopDong
+            // 
+            this.colSoHopDong.Caption = "Số HD";
+            this.colSoHopDong.FieldName = "SoHD";
+            this.colSoHopDong.Name = "colSoHopDong";
+            this.colSoHopDong.Visible = true;
+            this.colSoHopDong.VisibleIndex = 9;
+            this.colSoHopDong.Width = 72;
+            // 
+            // colSoPO
+            // 
+            this.colSoPO.Caption = "Số PO";
+            this.colSoPO.FieldName = "SoPO";
+            this.colSoPO.Name = "colSoPO";
+            this.colSoPO.Visible = true;
+            this.colSoPO.VisibleIndex = 10;
+            this.colSoPO.Width = 67;
+            // 
+            // colHTThanhToan
+            // 
+            this.colHTThanhToan.Caption = "HT ThanhToan";
+            this.colHTThanhToan.FieldName = "HTThanhToan";
+            this.colHTThanhToan.Name = "colHTThanhToan";
+            this.colHTThanhToan.Visible = true;
+            this.colHTThanhToan.VisibleIndex = 11;
+            this.colHTThanhToan.Width = 79;
+            // 
+            // colPTVanChuyen
+            // 
+            this.colPTVanChuyen.Caption = "Vận Chuyển";
+            this.colPTVanChuyen.FieldName = "PTVanChuyen";
+            this.colPTVanChuyen.Name = "colPTVanChuyen";
+            this.colPTVanChuyen.Visible = true;
+            this.colPTVanChuyen.VisibleIndex = 12;
+            this.colPTVanChuyen.Width = 69;
+            // 
+            // colDVTien
+            // 
+            this.colDVTien.Caption = "ĐV Tiền";
+            this.colDVTien.FieldName = "DVTien";
+            this.colDVTien.Name = "colDVTien";
+            this.colDVTien.Visible = true;
+            this.colDVTien.VisibleIndex = 13;
+            this.colDVTien.Width = 65;
             // 
             // frmImport
             // 
@@ -342,5 +406,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
         private DevExpress.XtraGrid.Columns.GridColumn colPartSent;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonSent;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoHopDong;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoPO;
+        private DevExpress.XtraGrid.Columns.GridColumn colHTThanhToan;
+        private DevExpress.XtraGrid.Columns.GridColumn colPTVanChuyen;
+        private DevExpress.XtraGrid.Columns.GridColumn colDVTien;
     }
 }

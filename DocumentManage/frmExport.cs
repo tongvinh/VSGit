@@ -69,6 +69,10 @@ namespace DocumentManage
                 string col_Bophan = "PartReceived";
                 string col_Nguoinhan = "PersonReceived";
 
+                //Update 11/12
+                string col_SoHopDong = "SoHopDong";
+                string col_SoHoaDon = "SoHoaDon";
+
                 string cotk, notk, des,bophan,nguoinhan;
 
                 object value_IDDocument = gvData.GetRowCellValue(row_index, col_IDDocument);
@@ -80,6 +84,9 @@ namespace DocumentManage
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
                 object value_Bophan = gvData.GetRowCellValue(row_index, col_Bophan);
                 object value_Nguoinhan = gvData.GetRowCellValue(row_index, col_Nguoinhan);
+                //Update 11/12
+                object value_SoHopDong = gvData.GetRowCellValue(row_index, col_SoHopDong);
+                object value_SoHoaDon = gvData.GetRowCellValue(row_index, col_SoHoaDon);
                 if (value_CoTK == null)
                 {
                     cotk = "";
@@ -120,7 +127,19 @@ namespace DocumentManage
                 {
                     nguoinhan = value_Nguoinhan.ToString();
                 }
-                frmExportUpdate frm = new frmExportUpdate(IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date),value_FromStore.ToString() , value_ToStore.ToString(), des, bophan, nguoinhan);
+                frmExportUpdate frm = new frmExportUpdate(
+                    IDEmployee,
+                    Convert.ToInt32(value_IDDocument.ToString()),
+                    notk,
+                    cotk,
+                    Convert.ToDateTime(value_Date),
+                    value_FromStore.ToString(),
+                    value_ToStore.ToString(),
+                    des,
+                    bophan,
+                    nguoinhan,
+                    value_SoHopDong == null ? "" : value_SoHopDong.ToString(),
+                    value_SoHoaDon == null ? "" : value_SoHoaDon.ToString());
                 frm.ShowDialog();
                 gcData.DataSource = ex.loaddata();
             }

@@ -62,6 +62,11 @@
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PartSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="PersonSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoHD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SoPO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HTThanhToan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PTVanChuyen" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DVTien" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Association Name="Document_DetailDocument" Member="DetailDocuments" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocument" />
       <Association Name="Employee_Document" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
     </Type>
@@ -79,6 +84,8 @@
       <Column Name="IDEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PartReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="PersonReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoHopDong" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SoHoaDon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="DocumentExport_DetailDocumentExport" Member="DetailDocumentExports" ThisKey="IDDocument" OtherKey="IDDocument" Type="DetailDocumentExport" />
       <Association Name="Employee_DocumentExport" Member="Employee" ThisKey="IDEmployee" OtherKey="IDEmployee" Type="Employee" IsForeignKey="true" />
     </Type>
@@ -100,6 +107,11 @@
       <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PartSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="PersonSent" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoHD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SoPO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HTThanhToan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PTVanChuyen" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DVTien" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.InforDocumentExport" Member="InforDocumentExports">
@@ -119,6 +131,8 @@
       <Column Name="DepartName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PartReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="PersonReceived" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoHopDong" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SoHoaDon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -68,7 +68,13 @@ namespace DocumentManage
                 string col_Description = "Description";
                 string col_nguoigiao = "PersonSent";
                 string col_bophan = "PartSent";
-       
+                //Update 11/12
+                string col_SoHD = "SoHD";
+                string col_SoPO = "SoPO";
+                string col_HTThanhToan = "HTThanhToan";
+                string col_PTVanChuyen = "PTVanChuyen";
+                string col_DVTien = "DVTien";
+
                 string cotk, notk, des,nguoigiao,bophan;
 
                 object value_IDDocument = gvData.GetRowCellValue(row_index, col_IDDocument);
@@ -80,6 +86,13 @@ namespace DocumentManage
                 object value_Description = gvData.GetRowCellValue(row_index, col_Description);
                 object value_Nguoigiao = gvData.GetRowCellValue(row_index, col_nguoigiao);
                 object value_Bophan = gvData.GetRowCellValue(row_index, col_bophan);
+                //Update 11/12
+                object value_SoHD = gvData.GetRowCellValue(row_index, col_SoHD);
+                object value_SoPO = gvData.GetRowCellValue(row_index, col_SoPO);
+                object value_HTThanhToan = gvData.GetRowCellValue(row_index, col_HTThanhToan);
+                object value_PTVanChuyen = gvData.GetRowCellValue(row_index, col_PTVanChuyen);
+                object value_DVTien = gvData.GetRowCellValue(row_index, col_DVTien);
+
                 if (value_CoTK == null)
                 {
                     cotk = "";
@@ -120,7 +133,22 @@ namespace DocumentManage
                 {
                     bophan = value_Bophan.ToString();
                 }
-                frmImportUpdate frm = new frmImportUpdate(this.IDEmployee, Convert.ToInt32(value_IDDocument.ToString()), notk, cotk, Convert.ToDateTime(value_Date),value_ToFromStore.ToString(), value_ToStore.ToString(), des, nguoigiao, bophan);
+                frmImportUpdate frm = new frmImportUpdate(
+                    this.IDEmployee,
+                    Convert.ToInt32(value_IDDocument.ToString()),
+                    notk,
+                    cotk,
+                    Convert.ToDateTime(value_Date),
+                    value_ToFromStore.ToString(),
+                    value_ToStore.ToString(),
+                    des,
+                    nguoigiao,
+                    bophan,
+                    value_SoHD==null?"":value_SoHD.ToString(),
+                    value_SoPO==null?"":value_SoPO.ToString(),
+                    value_HTThanhToan==null?"":value_HTThanhToan.ToString(),
+                    value_PTVanChuyen==null?"":value_PTVanChuyen.ToString(),
+                    value_DVTien==null?"":value_DVTien.ToString());
                 frm.ShowDialog();
                 this.gcData.DataSource = this.im.loaddata();
             }
